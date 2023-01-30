@@ -1,0 +1,2194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SYSCBKCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ACE_ACESSO">
+          <Key>
+            <PropertyRef Name="ISN_ACESSO" />
+          </Key>
+          <Property Name="ISN_ACESSO" Type="int" Nullable="false" />
+          <Property Name="TIP_ACESSO" Type="char" MaxLength="1" />
+          <Property Name="DSC_ACESSO" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="ANI_ANEXO_NINHADA">
+          <Key>
+            <PropertyRef Name="ISN_ANEXO_NINHADA" />
+          </Key>
+          <Property Name="ISN_ANEXO_NINHADA" Type="int" Nullable="false" />
+          <Property Name="ISN_NINHADA" Type="int" />
+          <Property Name="NOM_ANEXO_NINHADA" Type="varchar" MaxLength="200" />
+          <Property Name="NOM_ANEXO_FISICO" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="ATR_ANEXO_TRANSFERENCIA">
+          <Key>
+            <PropertyRef Name="ISN_ANEXO_TRANSFERENCIA" />
+          </Key>
+          <Property Name="ISN_ANEXO_TRANSFERENCIA" Type="int" Nullable="false" />
+          <Property Name="ISN_TRANSFERENCIA" Type="int" />
+          <Property Name="NOM_ANEXO_TRANSFERENCIA" Type="varchar" MaxLength="200" />
+          <Property Name="NOM_ANEXO_FISICO" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="BAN_BANDEIRA">
+          <Key>
+            <PropertyRef Name="ISN_BANDEIRA" />
+          </Key>
+          <Property Name="ISN_BANDEIRA" Type="int" Nullable="false" />
+          <Property Name="DSC_BANDEIRA" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CAN_CANIL">
+          <Key>
+            <PropertyRef Name="ISN_CANIL" />
+          </Key>
+          <Property Name="ISN_CANIL" Type="int" Nullable="false" />
+          <Property Name="CODIGO_FCI" Type="varchar" MaxLength="30" />
+          <Property Name="NOME" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="ISN_CLUBE" Type="int" />
+          <Property Name="PROPRIETARIO" Type="varchar" MaxLength="120" Nullable="false" />
+          <Property Name="COPROPRIETARIO" Type="varchar" MaxLength="120" />
+          <Property Name="ANUIDADE" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="CAR_CARRINHO">
+          <Key>
+            <PropertyRef Name="ISN_CARRINHO" />
+          </Key>
+          <Property Name="ISN_CARRINHO" Type="int" Nullable="false" />
+          <Property Name="ISN_SOLICITACAO" Type="int" Nullable="false" />
+          <Property Name="ISN_PESSOA" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CID_CIDADE">
+          <Key>
+            <PropertyRef Name="ISN_CIDADE" />
+          </Key>
+          <Property Name="ISN_CIDADE" Type="int" Nullable="false" />
+          <Property Name="DSC_CIDADE" Type="varchar" MaxLength="50" />
+          <Property Name="ISN_ESTADO" Type="int" />
+        </EntityType>
+        <EntityType Name="CLB_CLUBE">
+          <Key>
+            <PropertyRef Name="ISN_CLUBE" />
+          </Key>
+          <Property Name="ISN_CLUBE" Type="int" Nullable="false" />
+          <Property Name="DSC_CLUBE" Type="varchar" MaxLength="50" />
+          <Property Name="ISN_ESTADO" Type="int" />
+          <Property Name="ISN_REGIAO" Type="int" />
+          <Property Name="DSC_ENDERECO" Type="varchar" MaxLength="200" />
+          <Property Name="NUM_CEP" Type="char" MaxLength="10" />
+          <Property Name="NUM_TELEFONE_1" Type="char" MaxLength="15" />
+          <Property Name="NUM_TELEFONE_2" Type="char" MaxLength="15" />
+          <Property Name="DSC_EMAIL" Type="varchar" MaxLength="60" />
+          <Property Name="DSC_SITE" Type="varchar" MaxLength="60" />
+          <Property Name="NOM_CIDADE" Type="char" MaxLength="25" />
+          <Property Name="DSC_BAIRRO" Type="varchar" MaxLength="30" />
+          <Property Name="ISN_CIDADE" Type="int" />
+          <Property Name="STA_ADESAO" Type="int" />
+          <Property Name="DSC_SIGLACLUBE" Type="varchar" MaxLength="4" />
+        </EntityType>
+        <EntityType Name="CRC_COR_RACA">
+          <Key>
+            <PropertyRef Name="ISN_COR_RACA" />
+          </Key>
+          <Property Name="ISN_COR_RACA" Type="int" Nullable="false" />
+          <Property Name="DSC_COR_RACA" Type="varchar" MaxLength="50" />
+          <Property Name="ISN_RACA" Type="int" />
+          <Property Name="ISN_VARIEDADE_RACA" Type="int" />
+        </EntityType>
+        <EntityType Name="CUP_CUPOM">
+          <Key>
+            <PropertyRef Name="ISN_CUPOM" />
+          </Key>
+          <Property Name="ISN_CUPOM" Type="int" Nullable="false" />
+          <Property Name="COD_CUPOM" Type="varchar" MaxLength="20" />
+          <Property Name="VLR_CUPOM" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="ISN_PESSOA_REEMBOLSO" Type="int" />
+          <Property Name="NOM_PESSOA_REEMBOLSO" Type="varchar" MaxLength="100" />
+          <Property Name="ISN_PESSOA_CADASTRO_CUPOM" Type="int" />
+          <Property Name="NOM_PESSOA_CADASTRO_CUPOM" Type="varchar" MaxLength="100" />
+          <Property Name="DAT_CADASTRO" Type="smalldatetime" />
+          <Property Name="DAT_UTILIZACAO" Type="smalldatetime" />
+          <Property Name="ISN_SOLICITACAO" Type="int" />
+          <Property Name="STA_CUPOM" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="DAR_DOMINIO_ATRIBUTO">
+          <Key>
+            <PropertyRef Name="NOM_ATRIBUTO" />
+            <PropertyRef Name="VAL_ATRIBUTO" />
+          </Key>
+          <Property Name="NOM_ATRIBUTO" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="VAL_ATRIBUTO" Type="tinyint" Nullable="false" />
+          <Property Name="DES_ATRIBUTO" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="NUM_ATRIBUTO_COR" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="EST_ESTADO">
+          <Key>
+            <PropertyRef Name="ISN_ESTADO" />
+          </Key>
+          <Property Name="ISN_ESTADO" Type="int" Nullable="false" />
+          <Property Name="DSC_ESTADO" Type="varchar" MaxLength="50" />
+          <Property Name="ISN_REGIAO" Type="int" />
+          <Property Name="SIGLA" Type="varchar" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="FAT_FATURA">
+          <Key>
+            <PropertyRef Name="ISN_FATURA" />
+          </Key>
+          <Property Name="ISN_FATURA" Type="int" Nullable="false" />
+          <Property Name="ISN_PESSOA" Type="int" />
+          <Property Name="DSC_FORMA_PAGTO" Type="varchar" MaxLength="20" />
+          <Property Name="VLR_FATURA" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="QTDE_PARCELAS" Type="int" />
+          <Property Name="ISN_SOLICITACAO" Type="int" />
+          <Property Name="ISN_CUPOM" Type="int" />
+          <Property Name="VLR_TAXA" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="VLR_CUPOM" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="DAT_FATURA" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="FIL_FILHOTE">
+          <Key>
+            <PropertyRef Name="ISN_FILHOTE" />
+          </Key>
+          <Property Name="ISN_FILHOTE" Type="int" Nullable="false" />
+          <Property Name="ISN_NINHADA" Type="int" />
+          <Property Name="NOM_FILHOTE" Type="varchar" MaxLength="40" />
+          <Property Name="SEXO" Type="char" MaxLength="1" />
+          <Property Name="ISN_COR" Type="int" />
+          <Property Name="ISN_VARIEDADE_RACA" Type="int" />
+          <Property Name="NUM_MICROCHIP" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="ITF_ITEM_FATURA">
+          <Key>
+            <PropertyRef Name="ISN_ITEM_FATURA" />
+          </Key>
+          <Property Name="ISN_ITEM_FATURA" Type="int" Nullable="false" />
+          <Property Name="ISN_FATURA" Type="int" />
+          <Property Name="ISN_SOLICITACAO" Type="int" />
+          <Property Name="VLR_SOLICITACAO" Type="decimal" Precision="15" Scale="2" />
+        </EntityType>
+        <EntityType Name="NIN_NINHADA">
+          <Key>
+            <PropertyRef Name="ISN_NINHADA" />
+          </Key>
+          <Property Name="ISN_NINHADA" Type="int" Nullable="false" />
+          <Property Name="DAT_NASCIMENTO" Type="smalldatetime" />
+          <Property Name="ISN_RACA" Type="int" />
+          <Property Name="NOM_PAI" Type="varchar" MaxLength="50" />
+          <Property Name="RG_PAI" Type="varchar" MaxLength="50" />
+          <Property Name="NOM_MAE" Type="varchar" MaxLength="50" />
+          <Property Name="RG_MAE" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="OPG_OPCAO_PAGAMENTO">
+          <Key>
+            <PropertyRef Name="ISN_OPCAO_PAGAMENTO" />
+          </Key>
+          <Property Name="ISN_OPCAO_PAGAMENTO" Type="int" Nullable="false" />
+          <Property Name="DSC_OPCAO_PAGAMENTO" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PES_PESSOA">
+          <Key>
+            <PropertyRef Name="ISN_PESSOA" />
+          </Key>
+          <Property Name="ISN_PESSOA" Type="int" Nullable="false" />
+          <Property Name="NOM_PESSOA" Type="varchar" MaxLength="100" />
+          <Property Name="DSC_EMAIL" Type="varchar" MaxLength="100" />
+          <Property Name="CPF" Type="varchar" MaxLength="11" />
+          <Property Name="RG" Type="varchar" MaxLength="11" />
+          <Property Name="DSC_ENDERECO" Type="varchar" MaxLength="200" />
+          <Property Name="ISN_CLUBE" Type="int" />
+          <Property Name="ISN_CANIL" Type="int" />
+          <Property Name="NOM_CANIL" Type="varchar" MaxLength="100" />
+          <Property Name="ISN_ESTADO" Type="int" />
+          <Property Name="ISN_ACESSO" Type="int" />
+          <Property Name="DSC_CIDADE" Type="varchar" MaxLength="30" />
+          <Property Name="DSC_SENHA" Type="varchar" MaxLength="25" />
+          <Property Name="NUM_CEP" Type="char" MaxLength="10" />
+          <Property Name="DSC_COMPLEMENTO" Type="varchar" MaxLength="100" />
+          <Property Name="ISN_CIDADE" Type="int" />
+          <Property Name="DSC_BAIRRO" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PRD_PARAMETRO_DESCONTO">
+          <Key>
+            <PropertyRef Name="ISN_PARAMETRO" />
+          </Key>
+          <Property Name="ISN_PARAMETRO" Type="int" Nullable="false" />
+          <Property Name="DSC_PARAMETRO" Type="varchar" MaxLength="50" />
+          <Property Name="PERCENTUAL_DESCONTO" Type="decimal" Precision="15" Scale="2" />
+        </EntityType>
+        <EntityType Name="PRS_PRECO_SERVICO">
+          <Key>
+            <PropertyRef Name="ISN_PRECO_SERVICO" />
+          </Key>
+          <Property Name="ISN_PRECO_SERVICO" Type="int" Nullable="false" />
+          <Property Name="VLR_SERVICO" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="DAT_INICIAL_VIGENCIA" Type="smalldatetime" />
+          <Property Name="DAT_FINAL_VIGENCIA" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="RAC_RACA">
+          <Key>
+            <PropertyRef Name="ISN_RACA" />
+          </Key>
+          <Property Name="ISN_RACA" Type="int" Nullable="false" />
+          <Property Name="DSC_RACA" Type="varchar" MaxLength="50" />
+          <Property Name="ISN_PARAMETRO" Type="int" />
+          <Property Name="CODIGO_RACA" Type="int" />
+        </EntityType>
+        <EntityType Name="REG_REGIAO">
+          <Key>
+            <PropertyRef Name="ISN_REGIAO" />
+          </Key>
+          <Property Name="ISN_REGIAO" Type="int" Nullable="false" />
+          <Property Name="DSC_REGIAO" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="SER_SERVICO">
+          <Key>
+            <PropertyRef Name="ISN_SERVICO" />
+          </Key>
+          <Property Name="ISN_SERVICO" Type="int" Nullable="false" />
+          <Property Name="DSC_SERVICO" Type="varchar" MaxLength="100" />
+          <Property Name="ISN_PRECO_SERVICO" Type="int" />
+        </EntityType>
+        <EntityType Name="SOL_SOLICITACAO">
+          <Key>
+            <PropertyRef Name="ISN_SOLICITACAO" />
+          </Key>
+          <Property Name="ISN_SOLICITACAO" Type="int" Nullable="false" />
+          <Property Name="ISN_SERVICO" Type="int" />
+          <Property Name="STA_SOLICITACAO" Type="tinyint" />
+          <Property Name="DSC_SOLICITACAO" Type="ntext" />
+          <Property Name="DAT_SOLICITACAO" Type="smalldatetime" />
+          <Property Name="DSC_OBSERVACAO" Type="ntext" />
+          <Property Name="ISN_PESSOA" Type="int" />
+          <Property Name="STA_PGTO" Type="int" />
+          <Property Name="ISN_TRANSFERENCIA" Type="int" />
+          <Property Name="ISN_NINHADA" Type="int" />
+        </EntityType>
+        <EntityType Name="TRA_TRANSFERENCIA">
+          <Key>
+            <PropertyRef Name="ISN_TRANSFERENCIA" />
+          </Key>
+          <Property Name="ISN_TRANSFERENCIA" Type="int" Nullable="false" />
+          <Property Name="NOM_PROP_ORIGEM" Type="varchar" MaxLength="200" />
+          <Property Name="CPF_ORIGEM" Type="varchar" MaxLength="11" />
+          <Property Name="ENDERECO_ORIGEM" Type="varchar" MaxLength="100" />
+          <Property Name="NOM_PROP_DESTINO" Type="varchar" MaxLength="200" />
+          <Property Name="CPF_DESTINO" Type="varchar" MaxLength="11" />
+          <Property Name="ENDERECO_DESTINO" Type="varchar" MaxLength="100" />
+          <Property Name="NOM_CAO" Type="varchar" MaxLength="40" />
+          <Property Name="RG_CAO" Type="varchar" MaxLength="20" />
+          <Property Name="NUM_CEP_ORIGEM" Type="char" MaxLength="8" />
+          <Property Name="NUM_CEP_DESTINO" Type="char" MaxLength="8" />
+          <Property Name="DSC_COMPLEMENTO" Type="varchar" MaxLength="100" />
+          <Property Name="DSC_EMAIL" Type="varchar" MaxLength="100" />
+          <Property Name="DSC_COMPLEMENTO_DESTINO" Type="varchar" MaxLength="100" />
+          <Property Name="DSC_EMAIL_DESTINO" Type="varchar" MaxLength="100" />
+          <Property Name="BAIRRO_ORIGEM" Type="varchar" MaxLength="50" />
+          <Property Name="CIDADE_ORIGEM" Type="varchar" MaxLength="50" />
+          <Property Name="ESTADO_ORIGEM" Type="varchar" MaxLength="2" />
+          <Property Name="BAIRRO_DESTINO" Type="varchar" MaxLength="50" />
+          <Property Name="CIDADE_DESTINO" Type="varchar" MaxLength="50" />
+          <Property Name="ESTADO_DESTINO" Type="varchar" MaxLength="2" />
+          <Property Name="NOM_CO_PROPRIETARIO" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="VAR_VARIEDADE_RACA">
+          <Key>
+            <PropertyRef Name="ISN_VARIEDADE_RACA" />
+          </Key>
+          <Property Name="ISN_VARIEDADE_RACA" Type="int" Nullable="false" />
+          <Property Name="DSC_VARIEDADE" Type="varchar" MaxLength="80" />
+          <Property Name="ISN_RACA" Type="int" />
+          <Property Name="CODIGO_RACA" Type="int" />
+        </EntityType>
+        <Association Name="FK_ANI_ANEXO_NIN_NINHADA">
+          <End Role="NIN_NINHADA" Type="Self.NIN_NINHADA" Multiplicity="0..1" />
+          <End Role="ANI_ANEXO_NINHADA" Type="Self.ANI_ANEXO_NINHADA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NIN_NINHADA">
+              <PropertyRef Name="ISN_NINHADA" />
+            </Principal>
+            <Dependent Role="ANI_ANEXO_NINHADA">
+              <PropertyRef Name="ISN_NINHADA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ATR_ANEXO_TRA_TRANSFERENCIA">
+          <End Role="TRA_TRANSFERENCIA" Type="Self.TRA_TRANSFERENCIA" Multiplicity="0..1" />
+          <End Role="ATR_ANEXO_TRANSFERENCIA" Type="Self.ATR_ANEXO_TRANSFERENCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRA_TRANSFERENCIA">
+              <PropertyRef Name="ISN_TRANSFERENCIA" />
+            </Principal>
+            <Dependent Role="ATR_ANEXO_TRANSFERENCIA">
+              <PropertyRef Name="ISN_TRANSFERENCIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CAN_CLB">
+          <End Role="CLB_CLUBE" Type="Self.CLB_CLUBE" Multiplicity="0..1" />
+          <End Role="CAN_CANIL" Type="Self.CAN_CANIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLB_CLUBE">
+              <PropertyRef Name="ISN_CLUBE" />
+            </Principal>
+            <Dependent Role="CAN_CANIL">
+              <PropertyRef Name="ISN_CLUBE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CAR_CARRINHO_PES_PESSOA">
+          <End Role="PES_PESSOA" Type="Self.PES_PESSOA" Multiplicity="1" />
+          <End Role="CAR_CARRINHO" Type="Self.CAR_CARRINHO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PES_PESSOA">
+              <PropertyRef Name="ISN_PESSOA" />
+            </Principal>
+            <Dependent Role="CAR_CARRINHO">
+              <PropertyRef Name="ISN_PESSOA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CAR_CARRINHO_SOL_SOLICITACAO">
+          <End Role="SOL_SOLICITACAO" Type="Self.SOL_SOLICITACAO" Multiplicity="1" />
+          <End Role="CAR_CARRINHO" Type="Self.CAR_CARRINHO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SOL_SOLICITACAO">
+              <PropertyRef Name="ISN_SOLICITACAO" />
+            </Principal>
+            <Dependent Role="CAR_CARRINHO">
+              <PropertyRef Name="ISN_SOLICITACAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CID_CIDADE_EST_ESTADO">
+          <End Role="EST_ESTADO" Type="Self.EST_ESTADO" Multiplicity="0..1" />
+          <End Role="CID_CIDADE" Type="Self.CID_CIDADE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EST_ESTADO">
+              <PropertyRef Name="ISN_ESTADO" />
+            </Principal>
+            <Dependent Role="CID_CIDADE">
+              <PropertyRef Name="ISN_ESTADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CLB_CLUBE_CID_CIDADE">
+          <End Role="CID_CIDADE" Type="Self.CID_CIDADE" Multiplicity="0..1" />
+          <End Role="CLB_CLUBE" Type="Self.CLB_CLUBE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CID_CIDADE">
+              <PropertyRef Name="ISN_CIDADE" />
+            </Principal>
+            <Dependent Role="CLB_CLUBE">
+              <PropertyRef Name="ISN_CIDADE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CLB_CLUBE_EST_ESTADO">
+          <End Role="EST_ESTADO" Type="Self.EST_ESTADO" Multiplicity="0..1" />
+          <End Role="CLB_CLUBE" Type="Self.CLB_CLUBE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EST_ESTADO">
+              <PropertyRef Name="ISN_ESTADO" />
+            </Principal>
+            <Dependent Role="CLB_CLUBE">
+              <PropertyRef Name="ISN_ESTADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CLB_CLUBE_REG_REGIAO">
+          <End Role="REG_REGIAO" Type="Self.REG_REGIAO" Multiplicity="0..1" />
+          <End Role="CLB_CLUBE" Type="Self.CLB_CLUBE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REG_REGIAO">
+              <PropertyRef Name="ISN_REGIAO" />
+            </Principal>
+            <Dependent Role="CLB_CLUBE">
+              <PropertyRef Name="ISN_REGIAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CRC_COR_RACA_RAC_RACA">
+          <End Role="RAC_RACA" Type="Self.RAC_RACA" Multiplicity="0..1" />
+          <End Role="CRC_COR_RACA" Type="Self.CRC_COR_RACA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RAC_RACA">
+              <PropertyRef Name="ISN_RACA" />
+            </Principal>
+            <Dependent Role="CRC_COR_RACA">
+              <PropertyRef Name="ISN_RACA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CRC_COR_RACA_VAR_VARIEDADE_RACA">
+          <End Role="VAR_VARIEDADE_RACA" Type="Self.VAR_VARIEDADE_RACA" Multiplicity="0..1" />
+          <End Role="CRC_COR_RACA" Type="Self.CRC_COR_RACA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VAR_VARIEDADE_RACA">
+              <PropertyRef Name="ISN_VARIEDADE_RACA" />
+            </Principal>
+            <Dependent Role="CRC_COR_RACA">
+              <PropertyRef Name="ISN_VARIEDADE_RACA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CUP_PES_1">
+          <End Role="PES_PESSOA" Type="Self.PES_PESSOA" Multiplicity="0..1" />
+          <End Role="CUP_CUPOM" Type="Self.CUP_CUPOM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PES_PESSOA">
+              <PropertyRef Name="ISN_PESSOA" />
+            </Principal>
+            <Dependent Role="CUP_CUPOM">
+              <PropertyRef Name="ISN_PESSOA_REEMBOLSO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CUP_PES_2">
+          <End Role="PES_PESSOA" Type="Self.PES_PESSOA" Multiplicity="0..1" />
+          <End Role="CUP_CUPOM" Type="Self.CUP_CUPOM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PES_PESSOA">
+              <PropertyRef Name="ISN_PESSOA" />
+            </Principal>
+            <Dependent Role="CUP_CUPOM">
+              <PropertyRef Name="ISN_PESSOA_CADASTRO_CUPOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CUP_SOL">
+          <End Role="SOL_SOLICITACAO" Type="Self.SOL_SOLICITACAO" Multiplicity="0..1" />
+          <End Role="CUP_CUPOM" Type="Self.CUP_CUPOM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SOL_SOLICITACAO">
+              <PropertyRef Name="ISN_SOLICITACAO" />
+            </Principal>
+            <Dependent Role="CUP_CUPOM">
+              <PropertyRef Name="ISN_SOLICITACAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EST_ESTADO_REG_REGIAO">
+          <End Role="REG_REGIAO" Type="Self.REG_REGIAO" Multiplicity="0..1" />
+          <End Role="EST_ESTADO" Type="Self.EST_ESTADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REG_REGIAO">
+              <PropertyRef Name="ISN_REGIAO" />
+            </Principal>
+            <Dependent Role="EST_ESTADO">
+              <PropertyRef Name="ISN_REGIAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FAT_CUP">
+          <End Role="CUP_CUPOM" Type="Self.CUP_CUPOM" Multiplicity="0..1" />
+          <End Role="FAT_FATURA" Type="Self.FAT_FATURA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CUP_CUPOM">
+              <PropertyRef Name="ISN_CUPOM" />
+            </Principal>
+            <Dependent Role="FAT_FATURA">
+              <PropertyRef Name="ISN_CUPOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FAT_FATURA_PES_PESSOA">
+          <End Role="PES_PESSOA" Type="Self.PES_PESSOA" Multiplicity="0..1" />
+          <End Role="FAT_FATURA" Type="Self.FAT_FATURA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PES_PESSOA">
+              <PropertyRef Name="ISN_PESSOA" />
+            </Principal>
+            <Dependent Role="FAT_FATURA">
+              <PropertyRef Name="ISN_PESSOA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FAT_FATURA_SOL_SOLICITACAO">
+          <End Role="SOL_SOLICITACAO" Type="Self.SOL_SOLICITACAO" Multiplicity="0..1" />
+          <End Role="FAT_FATURA" Type="Self.FAT_FATURA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SOL_SOLICITACAO">
+              <PropertyRef Name="ISN_SOLICITACAO" />
+            </Principal>
+            <Dependent Role="FAT_FATURA">
+              <PropertyRef Name="ISN_SOLICITACAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FIL_FILHOTE_NIN_NINHADA">
+          <End Role="NIN_NINHADA" Type="Self.NIN_NINHADA" Multiplicity="0..1" />
+          <End Role="FIL_FILHOTE" Type="Self.FIL_FILHOTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NIN_NINHADA">
+              <PropertyRef Name="ISN_NINHADA" />
+            </Principal>
+            <Dependent Role="FIL_FILHOTE">
+              <PropertyRef Name="ISN_NINHADA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FIL_FILHOTE_VAR_VARIEDADE_RACA">
+          <End Role="VAR_VARIEDADE_RACA" Type="Self.VAR_VARIEDADE_RACA" Multiplicity="0..1" />
+          <End Role="FIL_FILHOTE" Type="Self.FIL_FILHOTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VAR_VARIEDADE_RACA">
+              <PropertyRef Name="ISN_VARIEDADE_RACA" />
+            </Principal>
+            <Dependent Role="FIL_FILHOTE">
+              <PropertyRef Name="ISN_VARIEDADE_RACA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ITF_FAT">
+          <End Role="FAT_FATURA" Type="Self.FAT_FATURA" Multiplicity="0..1" />
+          <End Role="ITF_ITEM_FATURA" Type="Self.ITF_ITEM_FATURA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FAT_FATURA">
+              <PropertyRef Name="ISN_FATURA" />
+            </Principal>
+            <Dependent Role="ITF_ITEM_FATURA">
+              <PropertyRef Name="ISN_FATURA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ITF_SOL">
+          <End Role="SOL_SOLICITACAO" Type="Self.SOL_SOLICITACAO" Multiplicity="0..1" />
+          <End Role="ITF_ITEM_FATURA" Type="Self.ITF_ITEM_FATURA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SOL_SOLICITACAO">
+              <PropertyRef Name="ISN_SOLICITACAO" />
+            </Principal>
+            <Dependent Role="ITF_ITEM_FATURA">
+              <PropertyRef Name="ISN_SOLICITACAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NIN_NINHADA_RAC_RACA">
+          <End Role="RAC_RACA" Type="Self.RAC_RACA" Multiplicity="0..1" />
+          <End Role="NIN_NINHADA" Type="Self.NIN_NINHADA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RAC_RACA">
+              <PropertyRef Name="ISN_RACA" />
+            </Principal>
+            <Dependent Role="NIN_NINHADA">
+              <PropertyRef Name="ISN_RACA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PES_CAN">
+          <End Role="CAN_CANIL" Type="Self.CAN_CANIL" Multiplicity="0..1" />
+          <End Role="PES_PESSOA" Type="Self.PES_PESSOA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAN_CANIL">
+              <PropertyRef Name="ISN_CANIL" />
+            </Principal>
+            <Dependent Role="PES_PESSOA">
+              <PropertyRef Name="ISN_CANIL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PES_PESSOA_ACE_ACESSO">
+          <End Role="ACE_ACESSO" Type="Self.ACE_ACESSO" Multiplicity="0..1" />
+          <End Role="PES_PESSOA" Type="Self.PES_PESSOA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACE_ACESSO">
+              <PropertyRef Name="ISN_ACESSO" />
+            </Principal>
+            <Dependent Role="PES_PESSOA">
+              <PropertyRef Name="ISN_ACESSO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PES_PESSOA_CID_CIDADE">
+          <End Role="CID_CIDADE" Type="Self.CID_CIDADE" Multiplicity="0..1" />
+          <End Role="PES_PESSOA" Type="Self.PES_PESSOA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CID_CIDADE">
+              <PropertyRef Name="ISN_CIDADE" />
+            </Principal>
+            <Dependent Role="PES_PESSOA">
+              <PropertyRef Name="ISN_CIDADE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PES_PESSOA_CLB_CLUBE">
+          <End Role="CLB_CLUBE" Type="Self.CLB_CLUBE" Multiplicity="0..1" />
+          <End Role="PES_PESSOA" Type="Self.PES_PESSOA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLB_CLUBE">
+              <PropertyRef Name="ISN_CLUBE" />
+            </Principal>
+            <Dependent Role="PES_PESSOA">
+              <PropertyRef Name="ISN_CLUBE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PES_PESSOA_EST_ESTADO">
+          <End Role="EST_ESTADO" Type="Self.EST_ESTADO" Multiplicity="0..1" />
+          <End Role="PES_PESSOA" Type="Self.PES_PESSOA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EST_ESTADO">
+              <PropertyRef Name="ISN_ESTADO" />
+            </Principal>
+            <Dependent Role="PES_PESSOA">
+              <PropertyRef Name="ISN_ESTADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAC_RACA_PRD_PARAMETRO_DESCONTO">
+          <End Role="PRD_PARAMETRO_DESCONTO" Type="Self.PRD_PARAMETRO_DESCONTO" Multiplicity="0..1" />
+          <End Role="RAC_RACA" Type="Self.RAC_RACA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRD_PARAMETRO_DESCONTO">
+              <PropertyRef Name="ISN_PARAMETRO" />
+            </Principal>
+            <Dependent Role="RAC_RACA">
+              <PropertyRef Name="ISN_PARAMETRO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SER_SERVICO_PRS_PRECO_SERVICO">
+          <End Role="PRS_PRECO_SERVICO" Type="Self.PRS_PRECO_SERVICO" Multiplicity="0..1" />
+          <End Role="SER_SERVICO" Type="Self.SER_SERVICO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRS_PRECO_SERVICO">
+              <PropertyRef Name="ISN_PRECO_SERVICO" />
+            </Principal>
+            <Dependent Role="SER_SERVICO">
+              <PropertyRef Name="ISN_PRECO_SERVICO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SOL_NIN">
+          <End Role="NIN_NINHADA" Type="Self.NIN_NINHADA" Multiplicity="0..1" />
+          <End Role="SOL_SOLICITACAO" Type="Self.SOL_SOLICITACAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NIN_NINHADA">
+              <PropertyRef Name="ISN_NINHADA" />
+            </Principal>
+            <Dependent Role="SOL_SOLICITACAO">
+              <PropertyRef Name="ISN_NINHADA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SOL_SOLICITACAO_PES_PESSOA">
+          <End Role="PES_PESSOA" Type="Self.PES_PESSOA" Multiplicity="0..1" />
+          <End Role="SOL_SOLICITACAO" Type="Self.SOL_SOLICITACAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PES_PESSOA">
+              <PropertyRef Name="ISN_PESSOA" />
+            </Principal>
+            <Dependent Role="SOL_SOLICITACAO">
+              <PropertyRef Name="ISN_PESSOA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SOL_SOLICITACAO_SER_SERVICO">
+          <End Role="SER_SERVICO" Type="Self.SER_SERVICO" Multiplicity="0..1" />
+          <End Role="SOL_SOLICITACAO" Type="Self.SOL_SOLICITACAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SER_SERVICO">
+              <PropertyRef Name="ISN_SERVICO" />
+            </Principal>
+            <Dependent Role="SOL_SOLICITACAO">
+              <PropertyRef Name="ISN_SERVICO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SOL_TRA">
+          <End Role="TRA_TRANSFERENCIA" Type="Self.TRA_TRANSFERENCIA" Multiplicity="0..1" />
+          <End Role="SOL_SOLICITACAO" Type="Self.SOL_SOLICITACAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRA_TRANSFERENCIA">
+              <PropertyRef Name="ISN_TRANSFERENCIA" />
+            </Principal>
+            <Dependent Role="SOL_SOLICITACAO">
+              <PropertyRef Name="ISN_TRANSFERENCIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VAR_VARIEDADE_RACA_RAC_RACA">
+          <End Role="RAC_RACA" Type="Self.RAC_RACA" Multiplicity="0..1" />
+          <End Role="VAR_VARIEDADE_RACA" Type="Self.VAR_VARIEDADE_RACA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RAC_RACA">
+              <PropertyRef Name="ISN_RACA" />
+            </Principal>
+            <Dependent Role="VAR_VARIEDADE_RACA">
+              <PropertyRef Name="ISN_RACA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SYSCBKCModelStoreContainer">
+          <EntitySet Name="ACE_ACESSO" EntityType="Self.ACE_ACESSO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ANI_ANEXO_NINHADA" EntityType="Self.ANI_ANEXO_NINHADA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ATR_ANEXO_TRANSFERENCIA" EntityType="Self.ATR_ANEXO_TRANSFERENCIA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BAN_BANDEIRA" EntityType="Self.BAN_BANDEIRA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CAN_CANIL" EntityType="Self.CAN_CANIL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CAR_CARRINHO" EntityType="Self.CAR_CARRINHO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CID_CIDADE" EntityType="Self.CID_CIDADE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CLB_CLUBE" EntityType="Self.CLB_CLUBE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CRC_COR_RACA" EntityType="Self.CRC_COR_RACA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CUP_CUPOM" EntityType="Self.CUP_CUPOM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DAR_DOMINIO_ATRIBUTO" EntityType="Self.DAR_DOMINIO_ATRIBUTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EST_ESTADO" EntityType="Self.EST_ESTADO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FAT_FATURA" EntityType="Self.FAT_FATURA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FIL_FILHOTE" EntityType="Self.FIL_FILHOTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ITF_ITEM_FATURA" EntityType="Self.ITF_ITEM_FATURA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NIN_NINHADA" EntityType="Self.NIN_NINHADA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OPG_OPCAO_PAGAMENTO" EntityType="Self.OPG_OPCAO_PAGAMENTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PES_PESSOA" EntityType="Self.PES_PESSOA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRD_PARAMETRO_DESCONTO" EntityType="Self.PRD_PARAMETRO_DESCONTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRS_PRECO_SERVICO" EntityType="Self.PRS_PRECO_SERVICO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RAC_RACA" EntityType="Self.RAC_RACA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="REG_REGIAO" EntityType="Self.REG_REGIAO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SER_SERVICO" EntityType="Self.SER_SERVICO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SOL_SOLICITACAO" EntityType="Self.SOL_SOLICITACAO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TRA_TRANSFERENCIA" EntityType="Self.TRA_TRANSFERENCIA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VAR_VARIEDADE_RACA" EntityType="Self.VAR_VARIEDADE_RACA" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ANI_ANEXO_NIN_NINHADA" Association="Self.FK_ANI_ANEXO_NIN_NINHADA">
+            <End Role="NIN_NINHADA" EntitySet="NIN_NINHADA" />
+            <End Role="ANI_ANEXO_NINHADA" EntitySet="ANI_ANEXO_NINHADA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ATR_ANEXO_TRA_TRANSFERENCIA" Association="Self.FK_ATR_ANEXO_TRA_TRANSFERENCIA">
+            <End Role="TRA_TRANSFERENCIA" EntitySet="TRA_TRANSFERENCIA" />
+            <End Role="ATR_ANEXO_TRANSFERENCIA" EntitySet="ATR_ANEXO_TRANSFERENCIA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CAN_CLB" Association="Self.FK_CAN_CLB">
+            <End Role="CLB_CLUBE" EntitySet="CLB_CLUBE" />
+            <End Role="CAN_CANIL" EntitySet="CAN_CANIL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CAR_CARRINHO_PES_PESSOA" Association="Self.FK_CAR_CARRINHO_PES_PESSOA">
+            <End Role="PES_PESSOA" EntitySet="PES_PESSOA" />
+            <End Role="CAR_CARRINHO" EntitySet="CAR_CARRINHO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CAR_CARRINHO_SOL_SOLICITACAO" Association="Self.FK_CAR_CARRINHO_SOL_SOLICITACAO">
+            <End Role="SOL_SOLICITACAO" EntitySet="SOL_SOLICITACAO" />
+            <End Role="CAR_CARRINHO" EntitySet="CAR_CARRINHO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CID_CIDADE_EST_ESTADO" Association="Self.FK_CID_CIDADE_EST_ESTADO">
+            <End Role="EST_ESTADO" EntitySet="EST_ESTADO" />
+            <End Role="CID_CIDADE" EntitySet="CID_CIDADE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CLB_CLUBE_CID_CIDADE" Association="Self.FK_CLB_CLUBE_CID_CIDADE">
+            <End Role="CID_CIDADE" EntitySet="CID_CIDADE" />
+            <End Role="CLB_CLUBE" EntitySet="CLB_CLUBE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CLB_CLUBE_EST_ESTADO" Association="Self.FK_CLB_CLUBE_EST_ESTADO">
+            <End Role="EST_ESTADO" EntitySet="EST_ESTADO" />
+            <End Role="CLB_CLUBE" EntitySet="CLB_CLUBE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CLB_CLUBE_REG_REGIAO" Association="Self.FK_CLB_CLUBE_REG_REGIAO">
+            <End Role="REG_REGIAO" EntitySet="REG_REGIAO" />
+            <End Role="CLB_CLUBE" EntitySet="CLB_CLUBE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CRC_COR_RACA_RAC_RACA" Association="Self.FK_CRC_COR_RACA_RAC_RACA">
+            <End Role="RAC_RACA" EntitySet="RAC_RACA" />
+            <End Role="CRC_COR_RACA" EntitySet="CRC_COR_RACA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CRC_COR_RACA_VAR_VARIEDADE_RACA" Association="Self.FK_CRC_COR_RACA_VAR_VARIEDADE_RACA">
+            <End Role="VAR_VARIEDADE_RACA" EntitySet="VAR_VARIEDADE_RACA" />
+            <End Role="CRC_COR_RACA" EntitySet="CRC_COR_RACA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CUP_PES_1" Association="Self.FK_CUP_PES_1">
+            <End Role="PES_PESSOA" EntitySet="PES_PESSOA" />
+            <End Role="CUP_CUPOM" EntitySet="CUP_CUPOM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CUP_PES_2" Association="Self.FK_CUP_PES_2">
+            <End Role="PES_PESSOA" EntitySet="PES_PESSOA" />
+            <End Role="CUP_CUPOM" EntitySet="CUP_CUPOM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CUP_SOL" Association="Self.FK_CUP_SOL">
+            <End Role="SOL_SOLICITACAO" EntitySet="SOL_SOLICITACAO" />
+            <End Role="CUP_CUPOM" EntitySet="CUP_CUPOM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EST_ESTADO_REG_REGIAO" Association="Self.FK_EST_ESTADO_REG_REGIAO">
+            <End Role="REG_REGIAO" EntitySet="REG_REGIAO" />
+            <End Role="EST_ESTADO" EntitySet="EST_ESTADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FAT_CUP" Association="Self.FK_FAT_CUP">
+            <End Role="CUP_CUPOM" EntitySet="CUP_CUPOM" />
+            <End Role="FAT_FATURA" EntitySet="FAT_FATURA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FAT_FATURA_PES_PESSOA" Association="Self.FK_FAT_FATURA_PES_PESSOA">
+            <End Role="PES_PESSOA" EntitySet="PES_PESSOA" />
+            <End Role="FAT_FATURA" EntitySet="FAT_FATURA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FAT_FATURA_SOL_SOLICITACAO" Association="Self.FK_FAT_FATURA_SOL_SOLICITACAO">
+            <End Role="SOL_SOLICITACAO" EntitySet="SOL_SOLICITACAO" />
+            <End Role="FAT_FATURA" EntitySet="FAT_FATURA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FIL_FILHOTE_NIN_NINHADA" Association="Self.FK_FIL_FILHOTE_NIN_NINHADA">
+            <End Role="NIN_NINHADA" EntitySet="NIN_NINHADA" />
+            <End Role="FIL_FILHOTE" EntitySet="FIL_FILHOTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FIL_FILHOTE_VAR_VARIEDADE_RACA" Association="Self.FK_FIL_FILHOTE_VAR_VARIEDADE_RACA">
+            <End Role="VAR_VARIEDADE_RACA" EntitySet="VAR_VARIEDADE_RACA" />
+            <End Role="FIL_FILHOTE" EntitySet="FIL_FILHOTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ITF_FAT" Association="Self.FK_ITF_FAT">
+            <End Role="FAT_FATURA" EntitySet="FAT_FATURA" />
+            <End Role="ITF_ITEM_FATURA" EntitySet="ITF_ITEM_FATURA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ITF_SOL" Association="Self.FK_ITF_SOL">
+            <End Role="SOL_SOLICITACAO" EntitySet="SOL_SOLICITACAO" />
+            <End Role="ITF_ITEM_FATURA" EntitySet="ITF_ITEM_FATURA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NIN_NINHADA_RAC_RACA" Association="Self.FK_NIN_NINHADA_RAC_RACA">
+            <End Role="RAC_RACA" EntitySet="RAC_RACA" />
+            <End Role="NIN_NINHADA" EntitySet="NIN_NINHADA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PES_CAN" Association="Self.FK_PES_CAN">
+            <End Role="CAN_CANIL" EntitySet="CAN_CANIL" />
+            <End Role="PES_PESSOA" EntitySet="PES_PESSOA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PES_PESSOA_ACE_ACESSO" Association="Self.FK_PES_PESSOA_ACE_ACESSO">
+            <End Role="ACE_ACESSO" EntitySet="ACE_ACESSO" />
+            <End Role="PES_PESSOA" EntitySet="PES_PESSOA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PES_PESSOA_CID_CIDADE" Association="Self.FK_PES_PESSOA_CID_CIDADE">
+            <End Role="CID_CIDADE" EntitySet="CID_CIDADE" />
+            <End Role="PES_PESSOA" EntitySet="PES_PESSOA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PES_PESSOA_CLB_CLUBE" Association="Self.FK_PES_PESSOA_CLB_CLUBE">
+            <End Role="CLB_CLUBE" EntitySet="CLB_CLUBE" />
+            <End Role="PES_PESSOA" EntitySet="PES_PESSOA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PES_PESSOA_EST_ESTADO" Association="Self.FK_PES_PESSOA_EST_ESTADO">
+            <End Role="EST_ESTADO" EntitySet="EST_ESTADO" />
+            <End Role="PES_PESSOA" EntitySet="PES_PESSOA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAC_RACA_PRD_PARAMETRO_DESCONTO" Association="Self.FK_RAC_RACA_PRD_PARAMETRO_DESCONTO">
+            <End Role="PRD_PARAMETRO_DESCONTO" EntitySet="PRD_PARAMETRO_DESCONTO" />
+            <End Role="RAC_RACA" EntitySet="RAC_RACA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SER_SERVICO_PRS_PRECO_SERVICO" Association="Self.FK_SER_SERVICO_PRS_PRECO_SERVICO">
+            <End Role="PRS_PRECO_SERVICO" EntitySet="PRS_PRECO_SERVICO" />
+            <End Role="SER_SERVICO" EntitySet="SER_SERVICO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SOL_NIN" Association="Self.FK_SOL_NIN">
+            <End Role="NIN_NINHADA" EntitySet="NIN_NINHADA" />
+            <End Role="SOL_SOLICITACAO" EntitySet="SOL_SOLICITACAO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SOL_SOLICITACAO_PES_PESSOA" Association="Self.FK_SOL_SOLICITACAO_PES_PESSOA">
+            <End Role="PES_PESSOA" EntitySet="PES_PESSOA" />
+            <End Role="SOL_SOLICITACAO" EntitySet="SOL_SOLICITACAO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SOL_SOLICITACAO_SER_SERVICO" Association="Self.FK_SOL_SOLICITACAO_SER_SERVICO">
+            <End Role="SER_SERVICO" EntitySet="SER_SERVICO" />
+            <End Role="SOL_SOLICITACAO" EntitySet="SOL_SOLICITACAO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SOL_TRA" Association="Self.FK_SOL_TRA">
+            <End Role="TRA_TRANSFERENCIA" EntitySet="TRA_TRANSFERENCIA" />
+            <End Role="SOL_SOLICITACAO" EntitySet="SOL_SOLICITACAO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VAR_VARIEDADE_RACA_RAC_RACA" Association="Self.FK_VAR_VARIEDADE_RACA_RAC_RACA">
+            <End Role="RAC_RACA" EntitySet="RAC_RACA" />
+            <End Role="VAR_VARIEDADE_RACA" EntitySet="VAR_VARIEDADE_RACA" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SYSCBKCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ACE_ACESSO">
+          <Key>
+            <PropertyRef Name="ISN_ACESSO" />
+          </Key>
+          <Property Name="ISN_ACESSO" Type="Int32" Nullable="false" />
+          <Property Name="TIP_ACESSO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="DSC_ACESSO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PES_PESSOA" Relationship="SYSCBKCModel.FK_PES_PESSOA_ACE_ACESSO" FromRole="ACE_ACESSO" ToRole="PES_PESSOA" />
+        </EntityType>
+        <EntityType Name="CLB_CLUBE">
+          <Key>
+            <PropertyRef Name="ISN_CLUBE" />
+          </Key>
+          <Property Name="ISN_CLUBE" Type="Int32" Nullable="false" />
+          <Property Name="DSC_CLUBE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISN_ESTADO" Type="Int32" />
+          <Property Name="ISN_REGIAO" Type="Int32" />
+          <Property Name="DSC_ENDERECO" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="NUM_CEP" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="NUM_TELEFONE_1" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="NUM_TELEFONE_2" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="DSC_EMAIL" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="DSC_SITE" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="NOM_CIDADE" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="EST_ESTADO" Relationship="Self.FK_CLB_CLUBE_EST_ESTADO" FromRole="CLB_CLUBE" ToRole="EST_ESTADO" />
+          <NavigationProperty Name="REG_REGIAO" Relationship="Self.FK_CLB_CLUBE_REG_REGIAO" FromRole="CLB_CLUBE" ToRole="REG_REGIAO" />
+          <NavigationProperty Name="PES_PESSOA" Relationship="Self.FK_PES_PESSOA_CLB_CLUBE" FromRole="CLB_CLUBE" ToRole="PES_PESSOA" />
+          <Property Name="DSC_BAIRRO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ISN_CIDADE" Type="Int32" />
+          <Property Name="STA_ADESAO" Type="Int32" />
+          <NavigationProperty Name="CID_CIDADE" Relationship="SYSCBKCModel.FK_CLB_CLUBE_CID_CIDADE" FromRole="CLB_CLUBE" ToRole="CID_CIDADE" />
+          <NavigationProperty Name="CAN_CANIL" Relationship="SYSCBKCModel.FK_CAN_CLB" FromRole="CLB_CLUBE" ToRole="CAN_CANIL" />
+          <Property Name="DSC_SIGLACLUBE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CRC_COR_RACA">
+          <Key>
+            <PropertyRef Name="ISN_COR_RACA" />
+          </Key>
+          <Property Name="ISN_COR_RACA" Type="Int32" Nullable="false" />
+          <Property Name="DSC_COR_RACA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISN_RACA" Type="Int32" />
+          <NavigationProperty Name="RAC_RACA" Relationship="Self.FK_CRC_COR_RACA_RAC_RACA" FromRole="CRC_COR_RACA" ToRole="RAC_RACA" />
+          <Property Name="ISN_VARIEDADE_RACA" Type="Int32" />
+          <NavigationProperty Name="VAR_VARIEDADE_RACA" Relationship="SYSCBKCModel.FK_CRC_COR_RACA_VAR_VARIEDADE_RACA" FromRole="CRC_COR_RACA" ToRole="VAR_VARIEDADE_RACA" />
+        </EntityType>
+        <EntityType Name="DAR_DOMINIO_ATRIBUTO">
+          <Key>
+            <PropertyRef Name="NOM_ATRIBUTO" />
+            <PropertyRef Name="VAL_ATRIBUTO" />
+          </Key>
+          <Property Name="NOM_ATRIBUTO" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="VAL_ATRIBUTO" Type="Byte" Nullable="false" />
+          <Property Name="DES_ATRIBUTO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NUM_ATRIBUTO_COR" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="EST_ESTADO">
+          <Key>
+            <PropertyRef Name="ISN_ESTADO" />
+          </Key>
+          <Property Name="ISN_ESTADO" Type="Int32" Nullable="false" />
+          <Property Name="DSC_ESTADO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISN_REGIAO" Type="Int32" />
+          <NavigationProperty Name="CLB_CLUBE" Relationship="Self.FK_CLB_CLUBE_EST_ESTADO" FromRole="EST_ESTADO" ToRole="CLB_CLUBE" />
+          <NavigationProperty Name="REG_REGIAO" Relationship="Self.FK_EST_ESTADO_REG_REGIAO" FromRole="EST_ESTADO" ToRole="REG_REGIAO" />
+          <NavigationProperty Name="PES_PESSOA" Relationship="Self.FK_PES_PESSOA_EST_ESTADO" FromRole="EST_ESTADO" ToRole="PES_PESSOA" />
+          <NavigationProperty Name="CID_CIDADE" Relationship="SYSCBKCModel.FK_CID_CIDADE_EST_ESTADO" FromRole="EST_ESTADO" ToRole="CID_CIDADE" />
+          <Property Name="SIGLA" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="FIL_FILHOTE">
+          <Key>
+            <PropertyRef Name="ISN_FILHOTE" />
+          </Key>
+          <Property Name="ISN_FILHOTE" Type="Int32" Nullable="false" />
+          <Property Name="ISN_NINHADA" Type="Int32" />
+          <Property Name="NOM_FILHOTE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="SEXO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ISN_COR" Type="Int32" />
+          <NavigationProperty Name="NIN_NINHADA" Relationship="Self.FK_FIL_FILHOTE_NIN_NINHADA" FromRole="FIL_FILHOTE" ToRole="NIN_NINHADA" />
+          <Property Name="ISN_VARIEDADE_RACA" Type="Int32" />
+          <NavigationProperty Name="VAR_VARIEDADE_RACA" Relationship="SYSCBKCModel.FK_FIL_FILHOTE_VAR_VARIEDADE_RACA" FromRole="FIL_FILHOTE" ToRole="VAR_VARIEDADE_RACA" />
+          <Property Name="NUM_MICROCHIP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="NIN_NINHADA">
+          <Key>
+            <PropertyRef Name="ISN_NINHADA" />
+          </Key>
+          <Property Name="ISN_NINHADA" Type="Int32" Nullable="false" />
+          <Property Name="DAT_NASCIMENTO" Type="DateTime" Precision="0" />
+          <Property Name="ISN_RACA" Type="Int32" />
+          <Property Name="NOM_PAI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RG_PAI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NOM_MAE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RG_MAE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="FIL_FILHOTE" Relationship="Self.FK_FIL_FILHOTE_NIN_NINHADA" FromRole="NIN_NINHADA" ToRole="FIL_FILHOTE" />
+          <NavigationProperty Name="RAC_RACA" Relationship="Self.FK_NIN_NINHADA_RAC_RACA" FromRole="NIN_NINHADA" ToRole="RAC_RACA" />
+          <NavigationProperty Name="ANI_ANEXO_NINHADA" Relationship="SYSCBKCModel.FK_ANI_ANEXO_NIN_NINHADA" FromRole="NIN_NINHADA" ToRole="ANI_ANEXO_NINHADA" />
+          <NavigationProperty Name="SOL_SOLICITACAO" Relationship="SYSCBKCModel.FK_SOL_NIN" FromRole="NIN_NINHADA" ToRole="SOL_SOLICITACAO" />
+        </EntityType>
+        <EntityType Name="PES_PESSOA">
+          <Key>
+            <PropertyRef Name="ISN_PESSOA" />
+          </Key>
+          <Property Name="ISN_PESSOA" Type="Int32" Nullable="false" />
+          <Property Name="NOM_PESSOA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DSC_EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CPF" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="RG" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="DSC_ENDERECO" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ISN_CLUBE" Type="Int32" />
+          <Property Name="ISN_CANIL" Type="Int32" />
+          <Property Name="NOM_CANIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ISN_ESTADO" Type="Int32" />
+          <NavigationProperty Name="CLB_CLUBE" Relationship="Self.FK_PES_PESSOA_CLB_CLUBE" FromRole="PES_PESSOA" ToRole="CLB_CLUBE" />
+          <NavigationProperty Name="EST_ESTADO" Relationship="Self.FK_PES_PESSOA_EST_ESTADO" FromRole="PES_PESSOA" ToRole="EST_ESTADO" />
+          <Property Name="ISN_ACESSO" Type="Int32" />
+          <Property Name="DSC_CIDADE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DSC_SENHA" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ACE_ACESSO" Relationship="SYSCBKCModel.FK_PES_PESSOA_ACE_ACESSO" FromRole="PES_PESSOA" ToRole="ACE_ACESSO" />
+          <NavigationProperty Name="SOL_SOLICITACAO" Relationship="SYSCBKCModel.FK_SOL_SOLICITACAO_PES_PESSOA" FromRole="PES_PESSOA" ToRole="SOL_SOLICITACAO" />
+          <NavigationProperty Name="FAT_FATURA" Relationship="SYSCBKCModel.FK_FAT_FATURA_PES_PESSOA" FromRole="PES_PESSOA" ToRole="FAT_FATURA" />
+          <Property Name="NUM_CEP" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="DSC_COMPLEMENTO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CAR_CARRINHO" Relationship="SYSCBKCModel.FK_CAR_CARRINHO_PES_PESSOA" FromRole="PES_PESSOA" ToRole="CAR_CARRINHO" />
+          <Property Name="ISN_CIDADE" Type="Int32" />
+          <NavigationProperty Name="CID_CIDADE" Relationship="SYSCBKCModel.FK_PES_PESSOA_CID_CIDADE" FromRole="PES_PESSOA" ToRole="CID_CIDADE" />
+          <NavigationProperty Name="CUP_CUPOM" Relationship="SYSCBKCModel.FK_CUP_PES_1" FromRole="PES_PESSOA" ToRole="CUP_CUPOM" />
+          <NavigationProperty Name="CUP_CUPOM1" Relationship="SYSCBKCModel.FK_CUP_PES_2" FromRole="PES_PESSOA" ToRole="CUP_CUPOM" />
+          <NavigationProperty Name="CAN_CANIL" Relationship="SYSCBKCModel.FK_PES_CAN" FromRole="PES_PESSOA" ToRole="CAN_CANIL" />
+          <Property Name="DSC_BAIRRO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PRS_PRECO_SERVICO">
+          <Key>
+            <PropertyRef Name="ISN_PRECO_SERVICO" />
+          </Key>
+          <Property Name="ISN_PRECO_SERVICO" Type="Int32" Nullable="false" />
+          <Property Name="VLR_SERVICO" Type="Decimal" Precision="15" Scale="2" />
+          <NavigationProperty Name="SER_SERVICO" Relationship="Self.FK_SER_SERVICO_PRS_PRECO_SERVICO" FromRole="PRS_PRECO_SERVICO" ToRole="SER_SERVICO" />
+          <Property Name="DAT_INICIAL_VIGENCIA" Type="DateTime" Precision="0" />
+          <Property Name="DAT_FINAL_VIGENCIA" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="RAC_RACA">
+          <Key>
+            <PropertyRef Name="ISN_RACA" />
+          </Key>
+          <Property Name="ISN_RACA" Type="Int32" Nullable="false" />
+          <Property Name="DSC_RACA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CRC_COR_RACA" Relationship="Self.FK_CRC_COR_RACA_RAC_RACA" FromRole="RAC_RACA" ToRole="CRC_COR_RACA" />
+          <NavigationProperty Name="NIN_NINHADA" Relationship="Self.FK_NIN_NINHADA_RAC_RACA" FromRole="RAC_RACA" ToRole="NIN_NINHADA" />
+          <NavigationProperty Name="VAR_VARIEDADE_RACA" Relationship="Self.FK_VAR_VARIEDADE_RACA_RAC_RACA" FromRole="RAC_RACA" ToRole="VAR_VARIEDADE_RACA" />
+          <Property Name="ISN_PARAMETRO" Type="Int32" />
+          <NavigationProperty Name="PRD_PARAMETRO_DESCONTO" Relationship="SYSCBKCModel.FK_RAC_RACA_PRD_PARAMETRO_DESCONTO" FromRole="RAC_RACA" ToRole="PRD_PARAMETRO_DESCONTO" />
+          <Property Name="CODIGO_RACA" Type="Int32" />
+        </EntityType>
+        <EntityType Name="REG_REGIAO">
+          <Key>
+            <PropertyRef Name="ISN_REGIAO" />
+          </Key>
+          <Property Name="ISN_REGIAO" Type="Int32" Nullable="false" />
+          <Property Name="DSC_REGIAO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CLB_CLUBE" Relationship="Self.FK_CLB_CLUBE_REG_REGIAO" FromRole="REG_REGIAO" ToRole="CLB_CLUBE" />
+          <NavigationProperty Name="EST_ESTADO" Relationship="Self.FK_EST_ESTADO_REG_REGIAO" FromRole="REG_REGIAO" ToRole="EST_ESTADO" />
+        </EntityType>
+        <EntityType Name="SER_SERVICO">
+          <Key>
+            <PropertyRef Name="ISN_SERVICO" />
+          </Key>
+          <Property Name="ISN_SERVICO" Type="Int32" Nullable="false" />
+          <Property Name="DSC_SERVICO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ISN_PRECO_SERVICO" Type="Int32" />
+          <NavigationProperty Name="PRS_PRECO_SERVICO" Relationship="Self.FK_SER_SERVICO_PRS_PRECO_SERVICO" FromRole="SER_SERVICO" ToRole="PRS_PRECO_SERVICO" />
+          <NavigationProperty Name="SOL_SOLICITACAO" Relationship="Self.FK_SOL_SOLICITACAO_SER_SERVICO" FromRole="SER_SERVICO" ToRole="SOL_SOLICITACAO" />
+        </EntityType>
+        <EntityType Name="SOL_SOLICITACAO">
+          <Key>
+            <PropertyRef Name="ISN_SOLICITACAO" />
+          </Key>
+          <Property Name="ISN_SOLICITACAO" Type="Int32" Nullable="false" />
+          <Property Name="ISN_SERVICO" Type="Int32" />
+          <Property Name="STA_SOLICITACAO" Type="Byte" />
+          <Property Name="DSC_SOLICITACAO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DAT_SOLICITACAO" Type="DateTime" Precision="0" />
+          <Property Name="DSC_OBSERVACAO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SER_SERVICO" Relationship="Self.FK_SOL_SOLICITACAO_SER_SERVICO" FromRole="SOL_SOLICITACAO" ToRole="SER_SERVICO" />
+          <Property Name="ISN_PESSOA" Type="Int32" />
+          <Property Name="STA_PGTO" Type="Int32" />
+          <NavigationProperty Name="PES_PESSOA" Relationship="SYSCBKCModel.FK_SOL_SOLICITACAO_PES_PESSOA" FromRole="SOL_SOLICITACAO" ToRole="PES_PESSOA" />
+          <NavigationProperty Name="FAT_FATURA" Relationship="SYSCBKCModel.FK_FAT_FATURA_SOL_SOLICITACAO" FromRole="SOL_SOLICITACAO" ToRole="FAT_FATURA" />
+          <Property Name="ISN_TRANSFERENCIA" Type="Int32" />
+          <Property Name="ISN_NINHADA" Type="Int32" />
+          <NavigationProperty Name="NIN_NINHADA" Relationship="SYSCBKCModel.FK_SOL_NIN" FromRole="SOL_SOLICITACAO" ToRole="NIN_NINHADA" />
+          <NavigationProperty Name="TRA_TRANSFERENCIA" Relationship="SYSCBKCModel.FK_SOL_TRA" FromRole="SOL_SOLICITACAO" ToRole="TRA_TRANSFERENCIA" />
+          <NavigationProperty Name="CAR_CARRINHO" Relationship="SYSCBKCModel.FK_CAR_CARRINHO_SOL_SOLICITACAO" FromRole="SOL_SOLICITACAO" ToRole="CAR_CARRINHO" />
+          <NavigationProperty Name="CUP_CUPOM" Relationship="SYSCBKCModel.FK_CUP_SOL" FromRole="SOL_SOLICITACAO" ToRole="CUP_CUPOM" />
+          <NavigationProperty Name="ITF_ITEM_FATURA" Relationship="SYSCBKCModel.FK_ITF_SOL" FromRole="SOL_SOLICITACAO" ToRole="ITF_ITEM_FATURA" />
+        </EntityType>
+        <EntityType Name="VAR_VARIEDADE_RACA">
+          <Key>
+            <PropertyRef Name="ISN_VARIEDADE_RACA" />
+          </Key>
+          <Property Name="ISN_VARIEDADE_RACA" Type="Int32" Nullable="false" />
+          <Property Name="DSC_VARIEDADE" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="ISN_RACA" Type="Int32" />
+          <NavigationProperty Name="RAC_RACA" Relationship="Self.FK_VAR_VARIEDADE_RACA_RAC_RACA" FromRole="VAR_VARIEDADE_RACA" ToRole="RAC_RACA" />
+          <NavigationProperty Name="FIL_FILHOTE" Relationship="SYSCBKCModel.FK_FIL_FILHOTE_VAR_VARIEDADE_RACA" FromRole="VAR_VARIEDADE_RACA" ToRole="FIL_FILHOTE" />
+          <NavigationProperty Name="CRC_COR_RACA" Relationship="SYSCBKCModel.FK_CRC_COR_RACA_VAR_VARIEDADE_RACA" FromRole="VAR_VARIEDADE_RACA" ToRole="CRC_COR_RACA" />
+          <Property Name="CODIGO_RACA" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_CLB_CLUBE_EST_ESTADO">
+          <End Role="EST_ESTADO" Type="Self.EST_ESTADO" Multiplicity="0..1" />
+          <End Role="CLB_CLUBE" Type="Self.CLB_CLUBE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EST_ESTADO">
+              <PropertyRef Name="ISN_ESTADO" />
+            </Principal>
+            <Dependent Role="CLB_CLUBE">
+              <PropertyRef Name="ISN_ESTADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CLB_CLUBE_REG_REGIAO">
+          <End Role="REG_REGIAO" Type="Self.REG_REGIAO" Multiplicity="0..1" />
+          <End Role="CLB_CLUBE" Type="Self.CLB_CLUBE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REG_REGIAO">
+              <PropertyRef Name="ISN_REGIAO" />
+            </Principal>
+            <Dependent Role="CLB_CLUBE">
+              <PropertyRef Name="ISN_REGIAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PES_PESSOA_CLB_CLUBE">
+          <End Role="CLB_CLUBE" Type="Self.CLB_CLUBE" Multiplicity="0..1" />
+          <End Role="PES_PESSOA" Type="Self.PES_PESSOA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLB_CLUBE">
+              <PropertyRef Name="ISN_CLUBE" />
+            </Principal>
+            <Dependent Role="PES_PESSOA">
+              <PropertyRef Name="ISN_CLUBE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CRC_COR_RACA_RAC_RACA">
+          <End Role="RAC_RACA" Type="Self.RAC_RACA" Multiplicity="0..1" />
+          <End Role="CRC_COR_RACA" Type="Self.CRC_COR_RACA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RAC_RACA">
+              <PropertyRef Name="ISN_RACA" />
+            </Principal>
+            <Dependent Role="CRC_COR_RACA">
+              <PropertyRef Name="ISN_RACA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EST_ESTADO_REG_REGIAO">
+          <End Role="REG_REGIAO" Type="Self.REG_REGIAO" Multiplicity="0..1" />
+          <End Role="EST_ESTADO" Type="Self.EST_ESTADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REG_REGIAO">
+              <PropertyRef Name="ISN_REGIAO" />
+            </Principal>
+            <Dependent Role="EST_ESTADO">
+              <PropertyRef Name="ISN_REGIAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PES_PESSOA_EST_ESTADO">
+          <End Role="EST_ESTADO" Type="Self.EST_ESTADO" Multiplicity="0..1" />
+          <End Role="PES_PESSOA" Type="Self.PES_PESSOA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EST_ESTADO">
+              <PropertyRef Name="ISN_ESTADO" />
+            </Principal>
+            <Dependent Role="PES_PESSOA">
+              <PropertyRef Name="ISN_ESTADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FIL_FILHOTE_NIN_NINHADA">
+          <End Role="NIN_NINHADA" Type="Self.NIN_NINHADA" Multiplicity="0..1" />
+          <End Role="FIL_FILHOTE" Type="Self.FIL_FILHOTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NIN_NINHADA">
+              <PropertyRef Name="ISN_NINHADA" />
+            </Principal>
+            <Dependent Role="FIL_FILHOTE">
+              <PropertyRef Name="ISN_NINHADA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NIN_NINHADA_RAC_RACA">
+          <End Role="RAC_RACA" Type="Self.RAC_RACA" Multiplicity="0..1" />
+          <End Role="NIN_NINHADA" Type="Self.NIN_NINHADA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RAC_RACA">
+              <PropertyRef Name="ISN_RACA" />
+            </Principal>
+            <Dependent Role="NIN_NINHADA">
+              <PropertyRef Name="ISN_RACA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SER_SERVICO_PRS_PRECO_SERVICO">
+          <End Role="PRS_PRECO_SERVICO" Type="Self.PRS_PRECO_SERVICO" Multiplicity="0..1" />
+          <End Role="SER_SERVICO" Type="Self.SER_SERVICO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRS_PRECO_SERVICO">
+              <PropertyRef Name="ISN_PRECO_SERVICO" />
+            </Principal>
+            <Dependent Role="SER_SERVICO">
+              <PropertyRef Name="ISN_PRECO_SERVICO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VAR_VARIEDADE_RACA_RAC_RACA">
+          <End Role="RAC_RACA" Type="Self.RAC_RACA" Multiplicity="0..1" />
+          <End Role="VAR_VARIEDADE_RACA" Type="Self.VAR_VARIEDADE_RACA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RAC_RACA">
+              <PropertyRef Name="ISN_RACA" />
+            </Principal>
+            <Dependent Role="VAR_VARIEDADE_RACA">
+              <PropertyRef Name="ISN_RACA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SOL_SOLICITACAO_SER_SERVICO">
+          <End Role="SER_SERVICO" Type="Self.SER_SERVICO" Multiplicity="0..1" />
+          <End Role="SOL_SOLICITACAO" Type="Self.SOL_SOLICITACAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SER_SERVICO">
+              <PropertyRef Name="ISN_SERVICO" />
+            </Principal>
+            <Dependent Role="SOL_SOLICITACAO">
+              <PropertyRef Name="ISN_SERVICO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DbSYSCBKCEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ACE_ACESSO" EntityType="Self.ACE_ACESSO" />
+          <EntitySet Name="CLB_CLUBE" EntityType="Self.CLB_CLUBE" />
+          <EntitySet Name="CRC_COR_RACA" EntityType="Self.CRC_COR_RACA" />
+          <EntitySet Name="DAR_DOMINIO_ATRIBUTO" EntityType="Self.DAR_DOMINIO_ATRIBUTO" />
+          <EntitySet Name="EST_ESTADO" EntityType="Self.EST_ESTADO" />
+          <EntitySet Name="FIL_FILHOTE" EntityType="Self.FIL_FILHOTE" />
+          <EntitySet Name="NIN_NINHADA" EntityType="Self.NIN_NINHADA" />
+          <EntitySet Name="PES_PESSOA" EntityType="Self.PES_PESSOA" />
+          <EntitySet Name="PRS_PRECO_SERVICO" EntityType="Self.PRS_PRECO_SERVICO" />
+          <EntitySet Name="RAC_RACA" EntityType="Self.RAC_RACA" />
+          <EntitySet Name="REG_REGIAO" EntityType="Self.REG_REGIAO" />
+          <EntitySet Name="SER_SERVICO" EntityType="Self.SER_SERVICO" />
+          <EntitySet Name="SOL_SOLICITACAO" EntityType="Self.SOL_SOLICITACAO" />
+          <EntitySet Name="VAR_VARIEDADE_RACA" EntityType="Self.VAR_VARIEDADE_RACA" />
+          <AssociationSet Name="FK_CLB_CLUBE_EST_ESTADO" Association="Self.FK_CLB_CLUBE_EST_ESTADO">
+            <End Role="EST_ESTADO" EntitySet="EST_ESTADO" />
+            <End Role="CLB_CLUBE" EntitySet="CLB_CLUBE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CLB_CLUBE_REG_REGIAO" Association="Self.FK_CLB_CLUBE_REG_REGIAO">
+            <End Role="REG_REGIAO" EntitySet="REG_REGIAO" />
+            <End Role="CLB_CLUBE" EntitySet="CLB_CLUBE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PES_PESSOA_CLB_CLUBE" Association="Self.FK_PES_PESSOA_CLB_CLUBE">
+            <End Role="CLB_CLUBE" EntitySet="CLB_CLUBE" />
+            <End Role="PES_PESSOA" EntitySet="PES_PESSOA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CRC_COR_RACA_RAC_RACA" Association="Self.FK_CRC_COR_RACA_RAC_RACA">
+            <End Role="RAC_RACA" EntitySet="RAC_RACA" />
+            <End Role="CRC_COR_RACA" EntitySet="CRC_COR_RACA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EST_ESTADO_REG_REGIAO" Association="Self.FK_EST_ESTADO_REG_REGIAO">
+            <End Role="REG_REGIAO" EntitySet="REG_REGIAO" />
+            <End Role="EST_ESTADO" EntitySet="EST_ESTADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PES_PESSOA_EST_ESTADO" Association="Self.FK_PES_PESSOA_EST_ESTADO">
+            <End Role="EST_ESTADO" EntitySet="EST_ESTADO" />
+            <End Role="PES_PESSOA" EntitySet="PES_PESSOA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FIL_FILHOTE_NIN_NINHADA" Association="Self.FK_FIL_FILHOTE_NIN_NINHADA">
+            <End Role="NIN_NINHADA" EntitySet="NIN_NINHADA" />
+            <End Role="FIL_FILHOTE" EntitySet="FIL_FILHOTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NIN_NINHADA_RAC_RACA" Association="Self.FK_NIN_NINHADA_RAC_RACA">
+            <End Role="RAC_RACA" EntitySet="RAC_RACA" />
+            <End Role="NIN_NINHADA" EntitySet="NIN_NINHADA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SER_SERVICO_PRS_PRECO_SERVICO" Association="Self.FK_SER_SERVICO_PRS_PRECO_SERVICO">
+            <End Role="PRS_PRECO_SERVICO" EntitySet="PRS_PRECO_SERVICO" />
+            <End Role="SER_SERVICO" EntitySet="SER_SERVICO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VAR_VARIEDADE_RACA_RAC_RACA" Association="Self.FK_VAR_VARIEDADE_RACA_RAC_RACA">
+            <End Role="RAC_RACA" EntitySet="RAC_RACA" />
+            <End Role="VAR_VARIEDADE_RACA" EntitySet="VAR_VARIEDADE_RACA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SOL_SOLICITACAO_SER_SERVICO" Association="Self.FK_SOL_SOLICITACAO_SER_SERVICO">
+            <End Role="SER_SERVICO" EntitySet="SER_SERVICO" />
+            <End Role="SOL_SOLICITACAO" EntitySet="SOL_SOLICITACAO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PES_PESSOA_ACE_ACESSO" Association="SYSCBKCModel.FK_PES_PESSOA_ACE_ACESSO">
+            <End Role="ACE_ACESSO" EntitySet="ACE_ACESSO" />
+            <End Role="PES_PESSOA" EntitySet="PES_PESSOA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SOL_SOLICITACAO_PES_PESSOA" Association="SYSCBKCModel.FK_SOL_SOLICITACAO_PES_PESSOA">
+            <End Role="PES_PESSOA" EntitySet="PES_PESSOA" />
+            <End Role="SOL_SOLICITACAO" EntitySet="SOL_SOLICITACAO" />
+          </AssociationSet>
+          <EntitySet Name="PRD_PARAMETRO_DESCONTO" EntityType="SYSCBKCModel.PRD_PARAMETRO_DESCONTO" />
+          <AssociationSet Name="FK_RAC_RACA_PRD_PARAMETRO_DESCONTO" Association="SYSCBKCModel.FK_RAC_RACA_PRD_PARAMETRO_DESCONTO">
+            <End Role="PRD_PARAMETRO_DESCONTO" EntitySet="PRD_PARAMETRO_DESCONTO" />
+            <End Role="RAC_RACA" EntitySet="RAC_RACA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FIL_FILHOTE_VAR_VARIEDADE_RACA" Association="SYSCBKCModel.FK_FIL_FILHOTE_VAR_VARIEDADE_RACA">
+            <End Role="VAR_VARIEDADE_RACA" EntitySet="VAR_VARIEDADE_RACA" />
+            <End Role="FIL_FILHOTE" EntitySet="FIL_FILHOTE" />
+          </AssociationSet>
+          <EntitySet Name="FAT_FATURA" EntityType="SYSCBKCModel.FAT_FATURA" />
+          <AssociationSet Name="FK_FAT_FATURA_PES_PESSOA" Association="SYSCBKCModel.FK_FAT_FATURA_PES_PESSOA">
+            <End Role="PES_PESSOA" EntitySet="PES_PESSOA" />
+            <End Role="FAT_FATURA" EntitySet="FAT_FATURA" />
+          </AssociationSet>
+          <EntitySet Name="TRA_TRANSFERENCIA" EntityType="SYSCBKCModel.TRA_TRANSFERENCIA" />
+          <EntitySet Name="ATR_ANEXO_TRANSFERENCIA" EntityType="SYSCBKCModel.ATR_ANEXO_TRANSFERENCIA" />
+          <AssociationSet Name="FK_ATR_ANEXO_TRA_TRANSFERENCIA" Association="SYSCBKCModel.FK_ATR_ANEXO_TRA_TRANSFERENCIA">
+            <End Role="TRA_TRANSFERENCIA" EntitySet="TRA_TRANSFERENCIA" />
+            <End Role="ATR_ANEXO_TRANSFERENCIA" EntitySet="ATR_ANEXO_TRANSFERENCIA" />
+          </AssociationSet>
+          <EntitySet Name="ANI_ANEXO_NINHADA" EntityType="SYSCBKCModel.ANI_ANEXO_NINHADA" />
+          <AssociationSet Name="FK_ANI_ANEXO_NIN_NINHADA" Association="SYSCBKCModel.FK_ANI_ANEXO_NIN_NINHADA">
+            <End Role="NIN_NINHADA" EntitySet="NIN_NINHADA" />
+            <End Role="ANI_ANEXO_NINHADA" EntitySet="ANI_ANEXO_NINHADA" />
+          </AssociationSet>
+          <EntitySet Name="BAN_BANDEIRA" EntityType="SYSCBKCModel.BAN_BANDEIRA" />
+          <EntitySet Name="OPG_OPCAO_PAGAMENTO" EntityType="SYSCBKCModel.OPG_OPCAO_PAGAMENTO" />
+          <AssociationSet Name="FK_FAT_FATURA_SOL_SOLICITACAO" Association="SYSCBKCModel.FK_FAT_FATURA_SOL_SOLICITACAO">
+            <End Role="SOL_SOLICITACAO" EntitySet="SOL_SOLICITACAO" />
+            <End Role="FAT_FATURA" EntitySet="FAT_FATURA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SOL_NIN" Association="SYSCBKCModel.FK_SOL_NIN">
+            <End Role="NIN_NINHADA" EntitySet="NIN_NINHADA" />
+            <End Role="SOL_SOLICITACAO" EntitySet="SOL_SOLICITACAO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SOL_TRA" Association="SYSCBKCModel.FK_SOL_TRA">
+            <End Role="TRA_TRANSFERENCIA" EntitySet="TRA_TRANSFERENCIA" />
+            <End Role="SOL_SOLICITACAO" EntitySet="SOL_SOLICITACAO" />
+          </AssociationSet>
+          <EntitySet Name="CAR_CARRINHO" EntityType="SYSCBKCModel.CAR_CARRINHO" />
+          <AssociationSet Name="FK_CAR_CARRINHO_PES_PESSOA" Association="SYSCBKCModel.FK_CAR_CARRINHO_PES_PESSOA">
+            <End Role="PES_PESSOA" EntitySet="PES_PESSOA" />
+            <End Role="CAR_CARRINHO" EntitySet="CAR_CARRINHO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CAR_CARRINHO_SOL_SOLICITACAO" Association="SYSCBKCModel.FK_CAR_CARRINHO_SOL_SOLICITACAO">
+            <End Role="SOL_SOLICITACAO" EntitySet="SOL_SOLICITACAO" />
+            <End Role="CAR_CARRINHO" EntitySet="CAR_CARRINHO" />
+          </AssociationSet>
+          <EntitySet Name="CID_CIDADE" EntityType="SYSCBKCModel.CID_CIDADE" />
+          <AssociationSet Name="FK_CID_CIDADE_EST_ESTADO" Association="SYSCBKCModel.FK_CID_CIDADE_EST_ESTADO">
+            <End Role="EST_ESTADO" EntitySet="EST_ESTADO" />
+            <End Role="CID_CIDADE" EntitySet="CID_CIDADE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CLB_CLUBE_CID_CIDADE" Association="SYSCBKCModel.FK_CLB_CLUBE_CID_CIDADE">
+            <End Role="CID_CIDADE" EntitySet="CID_CIDADE" />
+            <End Role="CLB_CLUBE" EntitySet="CLB_CLUBE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PES_PESSOA_CID_CIDADE" Association="SYSCBKCModel.FK_PES_PESSOA_CID_CIDADE">
+            <End Role="CID_CIDADE" EntitySet="CID_CIDADE" />
+            <End Role="PES_PESSOA" EntitySet="PES_PESSOA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CRC_COR_RACA_VAR_VARIEDADE_RACA" Association="SYSCBKCModel.FK_CRC_COR_RACA_VAR_VARIEDADE_RACA">
+            <End Role="VAR_VARIEDADE_RACA" EntitySet="VAR_VARIEDADE_RACA" />
+            <End Role="CRC_COR_RACA" EntitySet="CRC_COR_RACA" />
+          </AssociationSet>
+          <EntitySet Name="CUP_CUPOM" EntityType="SYSCBKCModel.CUP_CUPOM" />
+          <AssociationSet Name="FK_CUP_PES_1" Association="SYSCBKCModel.FK_CUP_PES_1">
+            <End Role="PES_PESSOA" EntitySet="PES_PESSOA" />
+            <End Role="CUP_CUPOM" EntitySet="CUP_CUPOM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CUP_PES_2" Association="SYSCBKCModel.FK_CUP_PES_2">
+            <End Role="PES_PESSOA" EntitySet="PES_PESSOA" />
+            <End Role="CUP_CUPOM" EntitySet="CUP_CUPOM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CUP_SOL" Association="SYSCBKCModel.FK_CUP_SOL">
+            <End Role="SOL_SOLICITACAO" EntitySet="SOL_SOLICITACAO" />
+            <End Role="CUP_CUPOM" EntitySet="CUP_CUPOM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FAT_CUP" Association="SYSCBKCModel.FK_FAT_CUP">
+            <End Role="CUP_CUPOM" EntitySet="CUP_CUPOM" />
+            <End Role="FAT_FATURA" EntitySet="FAT_FATURA" />
+          </AssociationSet>
+          <EntitySet Name="ITF_ITEM_FATURA" EntityType="SYSCBKCModel.ITF_ITEM_FATURA" />
+          <AssociationSet Name="FK_ITF_FAT" Association="SYSCBKCModel.FK_ITF_FAT">
+            <End Role="FAT_FATURA" EntitySet="FAT_FATURA" />
+            <End Role="ITF_ITEM_FATURA" EntitySet="ITF_ITEM_FATURA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ITF_SOL" Association="SYSCBKCModel.FK_ITF_SOL">
+            <End Role="SOL_SOLICITACAO" EntitySet="SOL_SOLICITACAO" />
+            <End Role="ITF_ITEM_FATURA" EntitySet="ITF_ITEM_FATURA" />
+          </AssociationSet>
+          <EntitySet Name="CAN_CANIL" EntityType="SYSCBKCModel.CAN_CANIL" />
+          <AssociationSet Name="FK_PES_CAN" Association="SYSCBKCModel.FK_PES_CAN">
+            <End Role="CAN_CANIL" EntitySet="CAN_CANIL" />
+            <End Role="PES_PESSOA" EntitySet="PES_PESSOA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CAN_CLB" Association="SYSCBKCModel.FK_CAN_CLB">
+            <End Role="CLB_CLUBE" EntitySet="CLB_CLUBE" />
+            <End Role="CAN_CANIL" EntitySet="CAN_CANIL" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FK_PES_PESSOA_ACE_ACESSO">
+          <End Type="SYSCBKCModel.ACE_ACESSO" Role="ACE_ACESSO" Multiplicity="0..1" />
+          <End Type="SYSCBKCModel.PES_PESSOA" Role="PES_PESSOA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACE_ACESSO">
+              <PropertyRef Name="ISN_ACESSO" />
+            </Principal>
+            <Dependent Role="PES_PESSOA">
+              <PropertyRef Name="ISN_ACESSO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SOL_SOLICITACAO_PES_PESSOA">
+          <End Type="SYSCBKCModel.PES_PESSOA" Role="PES_PESSOA" Multiplicity="0..1" />
+          <End Type="SYSCBKCModel.SOL_SOLICITACAO" Role="SOL_SOLICITACAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PES_PESSOA">
+              <PropertyRef Name="ISN_PESSOA" />
+            </Principal>
+            <Dependent Role="SOL_SOLICITACAO">
+              <PropertyRef Name="ISN_PESSOA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PRD_PARAMETRO_DESCONTO">
+          <Key>
+            <PropertyRef Name="ISN_PARAMETRO" />
+          </Key>
+          <Property Name="ISN_PARAMETRO" Type="Int32" Nullable="false" />
+          <Property Name="DSC_PARAMETRO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PERCENTUAL_DESCONTO" Type="Decimal" Precision="15" Scale="2" />
+          <NavigationProperty Name="RAC_RACA" Relationship="SYSCBKCModel.FK_RAC_RACA_PRD_PARAMETRO_DESCONTO" FromRole="PRD_PARAMETRO_DESCONTO" ToRole="RAC_RACA" />
+        </EntityType>
+        <Association Name="FK_RAC_RACA_PRD_PARAMETRO_DESCONTO">
+          <End Type="SYSCBKCModel.PRD_PARAMETRO_DESCONTO" Role="PRD_PARAMETRO_DESCONTO" Multiplicity="0..1" />
+          <End Type="SYSCBKCModel.RAC_RACA" Role="RAC_RACA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRD_PARAMETRO_DESCONTO">
+              <PropertyRef Name="ISN_PARAMETRO" />
+            </Principal>
+            <Dependent Role="RAC_RACA">
+              <PropertyRef Name="ISN_PARAMETRO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FIL_FILHOTE_VAR_VARIEDADE_RACA">
+          <End Type="SYSCBKCModel.VAR_VARIEDADE_RACA" Role="VAR_VARIEDADE_RACA" Multiplicity="0..1" />
+          <End Type="SYSCBKCModel.FIL_FILHOTE" Role="FIL_FILHOTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VAR_VARIEDADE_RACA">
+              <PropertyRef Name="ISN_VARIEDADE_RACA" />
+            </Principal>
+            <Dependent Role="FIL_FILHOTE">
+              <PropertyRef Name="ISN_VARIEDADE_RACA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FAT_FATURA">
+          <Key>
+            <PropertyRef Name="ISN_FATURA" />
+          </Key>
+          <Property Name="ISN_FATURA" Type="Int32" Nullable="false" />
+          <Property Name="ISN_PESSOA" Type="Int32" />
+          <Property Name="DSC_FORMA_PAGTO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="VLR_FATURA" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="QTDE_PARCELAS" Type="Int32" />
+          <NavigationProperty Name="PES_PESSOA" Relationship="SYSCBKCModel.FK_FAT_FATURA_PES_PESSOA" FromRole="FAT_FATURA" ToRole="PES_PESSOA" />
+          <Property Name="ISN_SOLICITACAO" Type="Int32" />
+          <NavigationProperty Name="SOL_SOLICITACAO" Relationship="SYSCBKCModel.FK_FAT_FATURA_SOL_SOLICITACAO" FromRole="FAT_FATURA" ToRole="SOL_SOLICITACAO" />
+          <Property Name="ISN_CUPOM" Type="Int32" />
+          <Property Name="VLR_TAXA" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="VLR_CUPOM" Type="Decimal" Precision="15" Scale="2" />
+          <NavigationProperty Name="CUP_CUPOM" Relationship="SYSCBKCModel.FK_FAT_CUP" FromRole="FAT_FATURA" ToRole="CUP_CUPOM" />
+          <NavigationProperty Name="ITF_ITEM_FATURA" Relationship="SYSCBKCModel.FK_ITF_FAT" FromRole="FAT_FATURA" ToRole="ITF_ITEM_FATURA" />
+          <Property Name="DAT_FATURA" Type="DateTime" Precision="0" />
+        </EntityType>
+        <Association Name="FK_FAT_FATURA_PES_PESSOA">
+          <End Type="SYSCBKCModel.PES_PESSOA" Role="PES_PESSOA" Multiplicity="0..1" />
+          <End Type="SYSCBKCModel.FAT_FATURA" Role="FAT_FATURA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PES_PESSOA">
+              <PropertyRef Name="ISN_PESSOA" />
+            </Principal>
+            <Dependent Role="FAT_FATURA">
+              <PropertyRef Name="ISN_PESSOA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TRA_TRANSFERENCIA">
+          <Key>
+            <PropertyRef Name="ISN_TRANSFERENCIA" />
+          </Key>
+          <Property Name="ISN_TRANSFERENCIA" Type="Int32" Nullable="false" />
+          <Property Name="NOM_PROP_ORIGEM" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CPF_ORIGEM" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="ENDERECO_ORIGEM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NOM_PROP_DESTINO" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CPF_DESTINO" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="ENDERECO_DESTINO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NOM_CAO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="RG_CAO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="NUM_CEP_ORIGEM" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="NUM_CEP_DESTINO" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="ATR_ANEXO_TRANSFERENCIA" Relationship="SYSCBKCModel.FK_ATR_ANEXO_TRA_TRANSFERENCIA" FromRole="TRA_TRANSFERENCIA" ToRole="ATR_ANEXO_TRANSFERENCIA" />
+          <NavigationProperty Name="SOL_SOLICITACAO" Relationship="SYSCBKCModel.FK_SOL_TRA" FromRole="TRA_TRANSFERENCIA" ToRole="SOL_SOLICITACAO" />
+          <Property Name="DSC_COMPLEMENTO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DSC_EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DSC_COMPLEMENTO_DESTINO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DSC_EMAIL_DESTINO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BAIRRO_ORIGEM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CIDADE_ORIGEM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO_ORIGEM" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="BAIRRO_DESTINO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CIDADE_DESTINO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO_DESTINO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="NOM_CO_PROPRIETARIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ATR_ANEXO_TRANSFERENCIA">
+          <Key>
+            <PropertyRef Name="ISN_ANEXO_TRANSFERENCIA" />
+          </Key>
+          <Property Name="ISN_ANEXO_TRANSFERENCIA" Type="Int32" Nullable="false" />
+          <Property Name="ISN_TRANSFERENCIA" Type="Int32" />
+          <Property Name="NOM_ANEXO_TRANSFERENCIA" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="NOM_ANEXO_FISICO" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TRA_TRANSFERENCIA" Relationship="SYSCBKCModel.FK_ATR_ANEXO_TRA_TRANSFERENCIA" FromRole="ATR_ANEXO_TRANSFERENCIA" ToRole="TRA_TRANSFERENCIA" />
+        </EntityType>
+        <Association Name="FK_ATR_ANEXO_TRA_TRANSFERENCIA">
+          <End Type="SYSCBKCModel.TRA_TRANSFERENCIA" Role="TRA_TRANSFERENCIA" Multiplicity="0..1" />
+          <End Type="SYSCBKCModel.ATR_ANEXO_TRANSFERENCIA" Role="ATR_ANEXO_TRANSFERENCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRA_TRANSFERENCIA">
+              <PropertyRef Name="ISN_TRANSFERENCIA" />
+            </Principal>
+            <Dependent Role="ATR_ANEXO_TRANSFERENCIA">
+              <PropertyRef Name="ISN_TRANSFERENCIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ANI_ANEXO_NINHADA">
+          <Key>
+            <PropertyRef Name="ISN_ANEXO_NINHADA" />
+          </Key>
+          <Property Name="ISN_ANEXO_NINHADA" Type="Int32" Nullable="false" />
+          <Property Name="ISN_NINHADA" Type="Int32" />
+          <Property Name="NOM_ANEXO_NINHADA" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="NOM_ANEXO_FISICO" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="NIN_NINHADA" Relationship="SYSCBKCModel.FK_ANI_ANEXO_NIN_NINHADA" FromRole="ANI_ANEXO_NINHADA" ToRole="NIN_NINHADA" />
+        </EntityType>
+        <Association Name="FK_ANI_ANEXO_NIN_NINHADA">
+          <End Type="SYSCBKCModel.NIN_NINHADA" Role="NIN_NINHADA" Multiplicity="0..1" />
+          <End Type="SYSCBKCModel.ANI_ANEXO_NINHADA" Role="ANI_ANEXO_NINHADA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NIN_NINHADA">
+              <PropertyRef Name="ISN_NINHADA" />
+            </Principal>
+            <Dependent Role="ANI_ANEXO_NINHADA">
+              <PropertyRef Name="ISN_NINHADA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="BAN_BANDEIRA">
+          <Key>
+            <PropertyRef Name="ISN_BANDEIRA" />
+          </Key>
+          <Property Name="ISN_BANDEIRA" Type="Int32" Nullable="false" />
+          <Property Name="DSC_BANDEIRA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="OPG_OPCAO_PAGAMENTO">
+          <Key>
+            <PropertyRef Name="ISN_OPCAO_PAGAMENTO" />
+          </Key>
+          <Property Name="ISN_OPCAO_PAGAMENTO" Type="Int32" Nullable="false" />
+          <Property Name="DSC_OPCAO_PAGAMENTO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_FAT_FATURA_SOL_SOLICITACAO">
+          <End Type="SYSCBKCModel.SOL_SOLICITACAO" Role="SOL_SOLICITACAO" Multiplicity="0..1" />
+          <End Type="SYSCBKCModel.FAT_FATURA" Role="FAT_FATURA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SOL_SOLICITACAO">
+              <PropertyRef Name="ISN_SOLICITACAO" />
+            </Principal>
+            <Dependent Role="FAT_FATURA">
+              <PropertyRef Name="ISN_SOLICITACAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SOL_NIN">
+          <End Type="SYSCBKCModel.NIN_NINHADA" Role="NIN_NINHADA" Multiplicity="0..1" />
+          <End Type="SYSCBKCModel.SOL_SOLICITACAO" Role="SOL_SOLICITACAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NIN_NINHADA">
+              <PropertyRef Name="ISN_NINHADA" />
+            </Principal>
+            <Dependent Role="SOL_SOLICITACAO">
+              <PropertyRef Name="ISN_NINHADA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SOL_TRA">
+          <End Type="SYSCBKCModel.TRA_TRANSFERENCIA" Role="TRA_TRANSFERENCIA" Multiplicity="0..1" />
+          <End Type="SYSCBKCModel.SOL_SOLICITACAO" Role="SOL_SOLICITACAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRA_TRANSFERENCIA">
+              <PropertyRef Name="ISN_TRANSFERENCIA" />
+            </Principal>
+            <Dependent Role="SOL_SOLICITACAO">
+              <PropertyRef Name="ISN_TRANSFERENCIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CAR_CARRINHO">
+          <Key>
+            <PropertyRef Name="ISN_CARRINHO" />
+          </Key>
+          <Property Name="ISN_CARRINHO" Type="Int32" Nullable="false" />
+          <Property Name="ISN_SOLICITACAO" Type="Int32" Nullable="false" />
+          <Property Name="ISN_PESSOA" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PES_PESSOA" Relationship="SYSCBKCModel.FK_CAR_CARRINHO_PES_PESSOA" FromRole="CAR_CARRINHO" ToRole="PES_PESSOA" />
+          <NavigationProperty Name="SOL_SOLICITACAO" Relationship="SYSCBKCModel.FK_CAR_CARRINHO_SOL_SOLICITACAO" FromRole="CAR_CARRINHO" ToRole="SOL_SOLICITACAO" />
+        </EntityType>
+        <Association Name="FK_CAR_CARRINHO_PES_PESSOA">
+          <End Type="SYSCBKCModel.PES_PESSOA" Role="PES_PESSOA" Multiplicity="1" />
+          <End Type="SYSCBKCModel.CAR_CARRINHO" Role="CAR_CARRINHO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PES_PESSOA">
+              <PropertyRef Name="ISN_PESSOA" />
+            </Principal>
+            <Dependent Role="CAR_CARRINHO">
+              <PropertyRef Name="ISN_PESSOA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CAR_CARRINHO_SOL_SOLICITACAO">
+          <End Type="SYSCBKCModel.SOL_SOLICITACAO" Role="SOL_SOLICITACAO" Multiplicity="1" />
+          <End Type="SYSCBKCModel.CAR_CARRINHO" Role="CAR_CARRINHO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SOL_SOLICITACAO">
+              <PropertyRef Name="ISN_SOLICITACAO" />
+            </Principal>
+            <Dependent Role="CAR_CARRINHO">
+              <PropertyRef Name="ISN_SOLICITACAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CID_CIDADE">
+          <Key>
+            <PropertyRef Name="ISN_CIDADE" />
+          </Key>
+          <Property Name="ISN_CIDADE" Type="Int32" Nullable="false" />
+          <Property Name="DSC_CIDADE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISN_ESTADO" Type="Int32" />
+          <NavigationProperty Name="EST_ESTADO" Relationship="SYSCBKCModel.FK_CID_CIDADE_EST_ESTADO" FromRole="CID_CIDADE" ToRole="EST_ESTADO" />
+          <NavigationProperty Name="CLB_CLUBE" Relationship="SYSCBKCModel.FK_CLB_CLUBE_CID_CIDADE" FromRole="CID_CIDADE" ToRole="CLB_CLUBE" />
+          <NavigationProperty Name="PES_PESSOA" Relationship="SYSCBKCModel.FK_PES_PESSOA_CID_CIDADE" FromRole="CID_CIDADE" ToRole="PES_PESSOA" />
+        </EntityType>
+        <Association Name="FK_CID_CIDADE_EST_ESTADO">
+          <End Type="SYSCBKCModel.EST_ESTADO" Role="EST_ESTADO" Multiplicity="0..1" />
+          <End Type="SYSCBKCModel.CID_CIDADE" Role="CID_CIDADE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EST_ESTADO">
+              <PropertyRef Name="ISN_ESTADO" />
+            </Principal>
+            <Dependent Role="CID_CIDADE">
+              <PropertyRef Name="ISN_ESTADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CLB_CLUBE_CID_CIDADE">
+          <End Type="SYSCBKCModel.CID_CIDADE" Role="CID_CIDADE" Multiplicity="0..1" />
+          <End Type="SYSCBKCModel.CLB_CLUBE" Role="CLB_CLUBE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CID_CIDADE">
+              <PropertyRef Name="ISN_CIDADE" />
+            </Principal>
+            <Dependent Role="CLB_CLUBE">
+              <PropertyRef Name="ISN_CIDADE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PES_PESSOA_CID_CIDADE">
+          <End Type="SYSCBKCModel.CID_CIDADE" Role="CID_CIDADE" Multiplicity="0..1" />
+          <End Type="SYSCBKCModel.PES_PESSOA" Role="PES_PESSOA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CID_CIDADE">
+              <PropertyRef Name="ISN_CIDADE" />
+            </Principal>
+            <Dependent Role="PES_PESSOA">
+              <PropertyRef Name="ISN_CIDADE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CRC_COR_RACA_VAR_VARIEDADE_RACA">
+          <End Type="SYSCBKCModel.VAR_VARIEDADE_RACA" Role="VAR_VARIEDADE_RACA" Multiplicity="0..1" />
+          <End Type="SYSCBKCModel.CRC_COR_RACA" Role="CRC_COR_RACA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VAR_VARIEDADE_RACA">
+              <PropertyRef Name="ISN_VARIEDADE_RACA" />
+            </Principal>
+            <Dependent Role="CRC_COR_RACA">
+              <PropertyRef Name="ISN_VARIEDADE_RACA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CUP_CUPOM">
+          <Key>
+            <PropertyRef Name="ISN_CUPOM" />
+          </Key>
+          <Property Name="ISN_CUPOM" Type="Int32" Nullable="false" />
+          <Property Name="COD_CUPOM" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="VLR_CUPOM" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="ISN_PESSOA_REEMBOLSO" Type="Int32" />
+          <Property Name="NOM_PESSOA_REEMBOLSO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ISN_PESSOA_CADASTRO_CUPOM" Type="Int32" />
+          <Property Name="NOM_PESSOA_CADASTRO_CUPOM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DAT_CADASTRO" Type="DateTime" Precision="0" />
+          <Property Name="DAT_UTILIZACAO" Type="DateTime" Precision="0" />
+          <Property Name="ISN_SOLICITACAO" Type="Int32" />
+          <Property Name="STA_CUPOM" Type="Byte" />
+          <NavigationProperty Name="PES_PESSOA" Relationship="SYSCBKCModel.FK_CUP_PES_1" FromRole="CUP_CUPOM" ToRole="PES_PESSOA" />
+          <NavigationProperty Name="PES_PESSOA1" Relationship="SYSCBKCModel.FK_CUP_PES_2" FromRole="CUP_CUPOM" ToRole="PES_PESSOA" />
+          <NavigationProperty Name="SOL_SOLICITACAO" Relationship="SYSCBKCModel.FK_CUP_SOL" FromRole="CUP_CUPOM" ToRole="SOL_SOLICITACAO" />
+          <NavigationProperty Name="FAT_FATURA" Relationship="SYSCBKCModel.FK_FAT_CUP" FromRole="CUP_CUPOM" ToRole="FAT_FATURA" />
+        </EntityType>
+        <Association Name="FK_CUP_PES_1">
+          <End Type="SYSCBKCModel.PES_PESSOA" Role="PES_PESSOA" Multiplicity="0..1" />
+          <End Type="SYSCBKCModel.CUP_CUPOM" Role="CUP_CUPOM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PES_PESSOA">
+              <PropertyRef Name="ISN_PESSOA" />
+            </Principal>
+            <Dependent Role="CUP_CUPOM">
+              <PropertyRef Name="ISN_PESSOA_REEMBOLSO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CUP_PES_2">
+          <End Type="SYSCBKCModel.PES_PESSOA" Role="PES_PESSOA" Multiplicity="0..1" />
+          <End Type="SYSCBKCModel.CUP_CUPOM" Role="CUP_CUPOM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PES_PESSOA">
+              <PropertyRef Name="ISN_PESSOA" />
+            </Principal>
+            <Dependent Role="CUP_CUPOM">
+              <PropertyRef Name="ISN_PESSOA_CADASTRO_CUPOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CUP_SOL">
+          <End Type="SYSCBKCModel.SOL_SOLICITACAO" Role="SOL_SOLICITACAO" Multiplicity="0..1" />
+          <End Type="SYSCBKCModel.CUP_CUPOM" Role="CUP_CUPOM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SOL_SOLICITACAO">
+              <PropertyRef Name="ISN_SOLICITACAO" />
+            </Principal>
+            <Dependent Role="CUP_CUPOM">
+              <PropertyRef Name="ISN_SOLICITACAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FAT_CUP">
+          <End Type="SYSCBKCModel.CUP_CUPOM" Role="CUP_CUPOM" Multiplicity="0..1" />
+          <End Type="SYSCBKCModel.FAT_FATURA" Role="FAT_FATURA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CUP_CUPOM">
+              <PropertyRef Name="ISN_CUPOM" />
+            </Principal>
+            <Dependent Role="FAT_FATURA">
+              <PropertyRef Name="ISN_CUPOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ITF_ITEM_FATURA">
+          <Key>
+            <PropertyRef Name="ISN_ITEM_FATURA" />
+          </Key>
+          <Property Name="ISN_ITEM_FATURA" Type="Int32" Nullable="false" />
+          <Property Name="ISN_FATURA" Type="Int32" />
+          <Property Name="ISN_SOLICITACAO" Type="Int32" />
+          <Property Name="VLR_SOLICITACAO" Type="Decimal" Precision="15" Scale="2" />
+          <NavigationProperty Name="FAT_FATURA" Relationship="SYSCBKCModel.FK_ITF_FAT" FromRole="ITF_ITEM_FATURA" ToRole="FAT_FATURA" />
+          <NavigationProperty Name="SOL_SOLICITACAO" Relationship="SYSCBKCModel.FK_ITF_SOL" FromRole="ITF_ITEM_FATURA" ToRole="SOL_SOLICITACAO" />
+        </EntityType>
+        <Association Name="FK_ITF_FAT">
+          <End Type="SYSCBKCModel.FAT_FATURA" Role="FAT_FATURA" Multiplicity="0..1" />
+          <End Type="SYSCBKCModel.ITF_ITEM_FATURA" Role="ITF_ITEM_FATURA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FAT_FATURA">
+              <PropertyRef Name="ISN_FATURA" />
+            </Principal>
+            <Dependent Role="ITF_ITEM_FATURA">
+              <PropertyRef Name="ISN_FATURA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ITF_SOL">
+          <End Type="SYSCBKCModel.SOL_SOLICITACAO" Role="SOL_SOLICITACAO" Multiplicity="0..1" />
+          <End Type="SYSCBKCModel.ITF_ITEM_FATURA" Role="ITF_ITEM_FATURA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SOL_SOLICITACAO">
+              <PropertyRef Name="ISN_SOLICITACAO" />
+            </Principal>
+            <Dependent Role="ITF_ITEM_FATURA">
+              <PropertyRef Name="ISN_SOLICITACAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CAN_CANIL">
+          <Key>
+            <PropertyRef Name="ISN_CANIL" />
+          </Key>
+          <Property Name="ISN_CANIL" Type="Int32" Nullable="false" />
+          <Property Name="CODIGO_FCI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NOME" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ISN_CLUBE" Type="Int32" />
+          <Property Name="PROPRIETARIO" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="COPROPRIETARIO" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="ANUIDADE" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="PES_PESSOA" Relationship="SYSCBKCModel.FK_PES_CAN" FromRole="CAN_CANIL" ToRole="PES_PESSOA" />
+          <NavigationProperty Name="CLB_CLUBE" Relationship="SYSCBKCModel.FK_CAN_CLB" FromRole="CAN_CANIL" ToRole="CLB_CLUBE" />
+        </EntityType>
+        <Association Name="FK_PES_CAN">
+          <End Type="SYSCBKCModel.CAN_CANIL" Role="CAN_CANIL" Multiplicity="0..1" />
+          <End Type="SYSCBKCModel.PES_PESSOA" Role="PES_PESSOA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAN_CANIL">
+              <PropertyRef Name="ISN_CANIL" />
+            </Principal>
+            <Dependent Role="PES_PESSOA">
+              <PropertyRef Name="ISN_CANIL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CAN_CLB">
+          <End Type="SYSCBKCModel.CLB_CLUBE" Role="CLB_CLUBE" Multiplicity="0..1" />
+          <End Type="SYSCBKCModel.CAN_CANIL" Role="CAN_CANIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLB_CLUBE">
+              <PropertyRef Name="ISN_CLUBE" />
+            </Principal>
+            <Dependent Role="CAN_CANIL">
+              <PropertyRef Name="ISN_CLUBE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SYSCBKCModelStoreContainer" CdmEntityContainer="DbSYSCBKCEntities">
+          <EntitySetMapping Name="ACE_ACESSO">
+            <EntityTypeMapping TypeName="SYSCBKCModel.ACE_ACESSO">
+              <MappingFragment StoreEntitySet="ACE_ACESSO">
+                <ScalarProperty Name="DSC_ACESSO" ColumnName="DSC_ACESSO" />
+                <ScalarProperty Name="ISN_ACESSO" ColumnName="ISN_ACESSO" />
+                <ScalarProperty Name="TIP_ACESSO" ColumnName="TIP_ACESSO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CLB_CLUBE">
+            <EntityTypeMapping TypeName="SYSCBKCModel.CLB_CLUBE">
+              <MappingFragment StoreEntitySet="CLB_CLUBE">
+                <ScalarProperty Name="DSC_SIGLACLUBE" ColumnName="DSC_SIGLACLUBE" />
+                <ScalarProperty Name="STA_ADESAO" ColumnName="STA_ADESAO" />
+                <ScalarProperty Name="ISN_CIDADE" ColumnName="ISN_CIDADE" />
+                <ScalarProperty Name="DSC_BAIRRO" ColumnName="DSC_BAIRRO" />
+                <ScalarProperty Name="ISN_CLUBE" ColumnName="ISN_CLUBE" />
+                <ScalarProperty Name="DSC_CLUBE" ColumnName="DSC_CLUBE" />
+                <ScalarProperty Name="ISN_ESTADO" ColumnName="ISN_ESTADO" />
+                <ScalarProperty Name="ISN_REGIAO" ColumnName="ISN_REGIAO" />
+                <ScalarProperty Name="DSC_ENDERECO" ColumnName="DSC_ENDERECO" />
+                <ScalarProperty Name="NUM_CEP" ColumnName="NUM_CEP" />
+                <ScalarProperty Name="NUM_TELEFONE_1" ColumnName="NUM_TELEFONE_1" />
+                <ScalarProperty Name="NUM_TELEFONE_2" ColumnName="NUM_TELEFONE_2" />
+                <ScalarProperty Name="DSC_EMAIL" ColumnName="DSC_EMAIL" />
+                <ScalarProperty Name="DSC_SITE" ColumnName="DSC_SITE" />
+                <ScalarProperty Name="NOM_CIDADE" ColumnName="NOM_CIDADE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CRC_COR_RACA">
+            <EntityTypeMapping TypeName="SYSCBKCModel.CRC_COR_RACA">
+              <MappingFragment StoreEntitySet="CRC_COR_RACA">
+                <ScalarProperty Name="ISN_VARIEDADE_RACA" ColumnName="ISN_VARIEDADE_RACA" />
+                <ScalarProperty Name="ISN_COR_RACA" ColumnName="ISN_COR_RACA" />
+                <ScalarProperty Name="DSC_COR_RACA" ColumnName="DSC_COR_RACA" />
+                <ScalarProperty Name="ISN_RACA" ColumnName="ISN_RACA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DAR_DOMINIO_ATRIBUTO">
+            <EntityTypeMapping TypeName="SYSCBKCModel.DAR_DOMINIO_ATRIBUTO">
+              <MappingFragment StoreEntitySet="DAR_DOMINIO_ATRIBUTO">
+                <ScalarProperty Name="NOM_ATRIBUTO" ColumnName="NOM_ATRIBUTO" />
+                <ScalarProperty Name="VAL_ATRIBUTO" ColumnName="VAL_ATRIBUTO" />
+                <ScalarProperty Name="DES_ATRIBUTO" ColumnName="DES_ATRIBUTO" />
+                <ScalarProperty Name="NUM_ATRIBUTO_COR" ColumnName="NUM_ATRIBUTO_COR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EST_ESTADO">
+            <EntityTypeMapping TypeName="SYSCBKCModel.EST_ESTADO">
+              <MappingFragment StoreEntitySet="EST_ESTADO">
+                <ScalarProperty Name="SIGLA" ColumnName="SIGLA" />
+                <ScalarProperty Name="ISN_ESTADO" ColumnName="ISN_ESTADO" />
+                <ScalarProperty Name="DSC_ESTADO" ColumnName="DSC_ESTADO" />
+                <ScalarProperty Name="ISN_REGIAO" ColumnName="ISN_REGIAO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FIL_FILHOTE">
+            <EntityTypeMapping TypeName="SYSCBKCModel.FIL_FILHOTE">
+              <MappingFragment StoreEntitySet="FIL_FILHOTE">
+                <ScalarProperty Name="NUM_MICROCHIP" ColumnName="NUM_MICROCHIP" />
+                <ScalarProperty Name="ISN_VARIEDADE_RACA" ColumnName="ISN_VARIEDADE_RACA" />
+                <ScalarProperty Name="ISN_FILHOTE" ColumnName="ISN_FILHOTE" />
+                <ScalarProperty Name="ISN_NINHADA" ColumnName="ISN_NINHADA" />
+                <ScalarProperty Name="NOM_FILHOTE" ColumnName="NOM_FILHOTE" />
+                <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+                <ScalarProperty Name="ISN_COR" ColumnName="ISN_COR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NIN_NINHADA">
+            <EntityTypeMapping TypeName="SYSCBKCModel.NIN_NINHADA">
+              <MappingFragment StoreEntitySet="NIN_NINHADA">
+                <ScalarProperty Name="ISN_NINHADA" ColumnName="ISN_NINHADA" />
+                <ScalarProperty Name="DAT_NASCIMENTO" ColumnName="DAT_NASCIMENTO" />
+                <ScalarProperty Name="ISN_RACA" ColumnName="ISN_RACA" />
+                <ScalarProperty Name="NOM_PAI" ColumnName="NOM_PAI" />
+                <ScalarProperty Name="RG_PAI" ColumnName="RG_PAI" />
+                <ScalarProperty Name="NOM_MAE" ColumnName="NOM_MAE" />
+                <ScalarProperty Name="RG_MAE" ColumnName="RG_MAE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PES_PESSOA">
+            <EntityTypeMapping TypeName="SYSCBKCModel.PES_PESSOA">
+              <MappingFragment StoreEntitySet="PES_PESSOA">
+                <ScalarProperty Name="DSC_BAIRRO" ColumnName="DSC_BAIRRO" />
+                <ScalarProperty Name="ISN_CIDADE" ColumnName="ISN_CIDADE" />
+                <ScalarProperty Name="DSC_COMPLEMENTO" ColumnName="DSC_COMPLEMENTO" />
+                <ScalarProperty Name="NUM_CEP" ColumnName="NUM_CEP" />
+                <ScalarProperty Name="DSC_SENHA" ColumnName="DSC_SENHA" />
+                <ScalarProperty Name="DSC_CIDADE" ColumnName="DSC_CIDADE" />
+                <ScalarProperty Name="ISN_ACESSO" ColumnName="ISN_ACESSO" />
+                <ScalarProperty Name="ISN_PESSOA" ColumnName="ISN_PESSOA" />
+                <ScalarProperty Name="NOM_PESSOA" ColumnName="NOM_PESSOA" />
+                <ScalarProperty Name="DSC_EMAIL" ColumnName="DSC_EMAIL" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="RG" ColumnName="RG" />
+                <ScalarProperty Name="DSC_ENDERECO" ColumnName="DSC_ENDERECO" />
+                <ScalarProperty Name="ISN_CLUBE" ColumnName="ISN_CLUBE" />
+                <ScalarProperty Name="ISN_CANIL" ColumnName="ISN_CANIL" />
+                <ScalarProperty Name="NOM_CANIL" ColumnName="NOM_CANIL" />
+                <ScalarProperty Name="ISN_ESTADO" ColumnName="ISN_ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRS_PRECO_SERVICO">
+            <EntityTypeMapping TypeName="SYSCBKCModel.PRS_PRECO_SERVICO">
+              <MappingFragment StoreEntitySet="PRS_PRECO_SERVICO">
+                <ScalarProperty Name="DAT_FINAL_VIGENCIA" ColumnName="DAT_FINAL_VIGENCIA" />
+                <ScalarProperty Name="DAT_INICIAL_VIGENCIA" ColumnName="DAT_INICIAL_VIGENCIA" />
+                <ScalarProperty Name="ISN_PRECO_SERVICO" ColumnName="ISN_PRECO_SERVICO" />
+                <ScalarProperty Name="VLR_SERVICO" ColumnName="VLR_SERVICO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RAC_RACA">
+            <EntityTypeMapping TypeName="SYSCBKCModel.RAC_RACA">
+              <MappingFragment StoreEntitySet="RAC_RACA">
+                <ScalarProperty Name="CODIGO_RACA" ColumnName="CODIGO_RACA" />
+                <ScalarProperty Name="ISN_PARAMETRO" ColumnName="ISN_PARAMETRO" />
+                <ScalarProperty Name="ISN_RACA" ColumnName="ISN_RACA" />
+                <ScalarProperty Name="DSC_RACA" ColumnName="DSC_RACA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REG_REGIAO">
+            <EntityTypeMapping TypeName="SYSCBKCModel.REG_REGIAO">
+              <MappingFragment StoreEntitySet="REG_REGIAO">
+                <ScalarProperty Name="ISN_REGIAO" ColumnName="ISN_REGIAO" />
+                <ScalarProperty Name="DSC_REGIAO" ColumnName="DSC_REGIAO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SER_SERVICO">
+            <EntityTypeMapping TypeName="SYSCBKCModel.SER_SERVICO">
+              <MappingFragment StoreEntitySet="SER_SERVICO">
+                <ScalarProperty Name="ISN_SERVICO" ColumnName="ISN_SERVICO" />
+                <ScalarProperty Name="DSC_SERVICO" ColumnName="DSC_SERVICO" />
+                <ScalarProperty Name="ISN_PRECO_SERVICO" ColumnName="ISN_PRECO_SERVICO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SOL_SOLICITACAO">
+            <EntityTypeMapping TypeName="SYSCBKCModel.SOL_SOLICITACAO">
+              <MappingFragment StoreEntitySet="SOL_SOLICITACAO">
+                <ScalarProperty Name="ISN_NINHADA" ColumnName="ISN_NINHADA" />
+                <ScalarProperty Name="ISN_TRANSFERENCIA" ColumnName="ISN_TRANSFERENCIA" />
+                <ScalarProperty Name="STA_PGTO" ColumnName="STA_PGTO" />
+                <ScalarProperty Name="ISN_PESSOA" ColumnName="ISN_PESSOA" />
+                <ScalarProperty Name="ISN_SOLICITACAO" ColumnName="ISN_SOLICITACAO" />
+                <ScalarProperty Name="ISN_SERVICO" ColumnName="ISN_SERVICO" />
+                <ScalarProperty Name="STA_SOLICITACAO" ColumnName="STA_SOLICITACAO" />
+                <ScalarProperty Name="DSC_SOLICITACAO" ColumnName="DSC_SOLICITACAO" />
+                <ScalarProperty Name="DAT_SOLICITACAO" ColumnName="DAT_SOLICITACAO" />
+                <ScalarProperty Name="DSC_OBSERVACAO" ColumnName="DSC_OBSERVACAO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VAR_VARIEDADE_RACA">
+            <EntityTypeMapping TypeName="SYSCBKCModel.VAR_VARIEDADE_RACA">
+              <MappingFragment StoreEntitySet="VAR_VARIEDADE_RACA">
+                <ScalarProperty Name="CODIGO_RACA" ColumnName="CODIGO_RACA" />
+                <ScalarProperty Name="ISN_VARIEDADE_RACA" ColumnName="ISN_VARIEDADE_RACA" />
+                <ScalarProperty Name="DSC_VARIEDADE" ColumnName="DSC_VARIEDADE" />
+                <ScalarProperty Name="ISN_RACA" ColumnName="ISN_RACA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRD_PARAMETRO_DESCONTO">
+            <EntityTypeMapping TypeName="SYSCBKCModel.PRD_PARAMETRO_DESCONTO">
+              <MappingFragment StoreEntitySet="PRD_PARAMETRO_DESCONTO">
+                <ScalarProperty Name="PERCENTUAL_DESCONTO" ColumnName="PERCENTUAL_DESCONTO" />
+                <ScalarProperty Name="DSC_PARAMETRO" ColumnName="DSC_PARAMETRO" />
+                <ScalarProperty Name="ISN_PARAMETRO" ColumnName="ISN_PARAMETRO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FAT_FATURA">
+            <EntityTypeMapping TypeName="SYSCBKCModel.FAT_FATURA">
+              <MappingFragment StoreEntitySet="FAT_FATURA">
+                <ScalarProperty Name="DAT_FATURA" ColumnName="DAT_FATURA" />
+                <ScalarProperty Name="VLR_CUPOM" ColumnName="VLR_CUPOM" />
+                <ScalarProperty Name="VLR_TAXA" ColumnName="VLR_TAXA" />
+                <ScalarProperty Name="ISN_CUPOM" ColumnName="ISN_CUPOM" />
+                <ScalarProperty Name="ISN_SOLICITACAO" ColumnName="ISN_SOLICITACAO" />
+                <ScalarProperty Name="QTDE_PARCELAS" ColumnName="QTDE_PARCELAS" />
+                <ScalarProperty Name="VLR_FATURA" ColumnName="VLR_FATURA" />
+                <ScalarProperty Name="DSC_FORMA_PAGTO" ColumnName="DSC_FORMA_PAGTO" />
+                <ScalarProperty Name="ISN_PESSOA" ColumnName="ISN_PESSOA" />
+                <ScalarProperty Name="ISN_FATURA" ColumnName="ISN_FATURA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRA_TRANSFERENCIA">
+            <EntityTypeMapping TypeName="SYSCBKCModel.TRA_TRANSFERENCIA">
+              <MappingFragment StoreEntitySet="TRA_TRANSFERENCIA">
+                <ScalarProperty Name="NOM_CO_PROPRIETARIO" ColumnName="NOM_CO_PROPRIETARIO" />
+                <ScalarProperty Name="ESTADO_DESTINO" ColumnName="ESTADO_DESTINO" />
+                <ScalarProperty Name="CIDADE_DESTINO" ColumnName="CIDADE_DESTINO" />
+                <ScalarProperty Name="BAIRRO_DESTINO" ColumnName="BAIRRO_DESTINO" />
+                <ScalarProperty Name="ESTADO_ORIGEM" ColumnName="ESTADO_ORIGEM" />
+                <ScalarProperty Name="CIDADE_ORIGEM" ColumnName="CIDADE_ORIGEM" />
+                <ScalarProperty Name="BAIRRO_ORIGEM" ColumnName="BAIRRO_ORIGEM" />
+                <ScalarProperty Name="DSC_EMAIL_DESTINO" ColumnName="DSC_EMAIL_DESTINO" />
+                <ScalarProperty Name="DSC_COMPLEMENTO_DESTINO" ColumnName="DSC_COMPLEMENTO_DESTINO" />
+                <ScalarProperty Name="DSC_EMAIL" ColumnName="DSC_EMAIL" />
+                <ScalarProperty Name="DSC_COMPLEMENTO" ColumnName="DSC_COMPLEMENTO" />
+                <ScalarProperty Name="NUM_CEP_DESTINO" ColumnName="NUM_CEP_DESTINO" />
+                <ScalarProperty Name="NUM_CEP_ORIGEM" ColumnName="NUM_CEP_ORIGEM" />
+                <ScalarProperty Name="RG_CAO" ColumnName="RG_CAO" />
+                <ScalarProperty Name="NOM_CAO" ColumnName="NOM_CAO" />
+                <ScalarProperty Name="ENDERECO_DESTINO" ColumnName="ENDERECO_DESTINO" />
+                <ScalarProperty Name="CPF_DESTINO" ColumnName="CPF_DESTINO" />
+                <ScalarProperty Name="NOM_PROP_DESTINO" ColumnName="NOM_PROP_DESTINO" />
+                <ScalarProperty Name="ENDERECO_ORIGEM" ColumnName="ENDERECO_ORIGEM" />
+                <ScalarProperty Name="CPF_ORIGEM" ColumnName="CPF_ORIGEM" />
+                <ScalarProperty Name="NOM_PROP_ORIGEM" ColumnName="NOM_PROP_ORIGEM" />
+                <ScalarProperty Name="ISN_TRANSFERENCIA" ColumnName="ISN_TRANSFERENCIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ATR_ANEXO_TRANSFERENCIA">
+            <EntityTypeMapping TypeName="SYSCBKCModel.ATR_ANEXO_TRANSFERENCIA">
+              <MappingFragment StoreEntitySet="ATR_ANEXO_TRANSFERENCIA">
+                <ScalarProperty Name="NOM_ANEXO_FISICO" ColumnName="NOM_ANEXO_FISICO" />
+                <ScalarProperty Name="NOM_ANEXO_TRANSFERENCIA" ColumnName="NOM_ANEXO_TRANSFERENCIA" />
+                <ScalarProperty Name="ISN_TRANSFERENCIA" ColumnName="ISN_TRANSFERENCIA" />
+                <ScalarProperty Name="ISN_ANEXO_TRANSFERENCIA" ColumnName="ISN_ANEXO_TRANSFERENCIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ANI_ANEXO_NINHADA">
+            <EntityTypeMapping TypeName="SYSCBKCModel.ANI_ANEXO_NINHADA">
+              <MappingFragment StoreEntitySet="ANI_ANEXO_NINHADA">
+                <ScalarProperty Name="NOM_ANEXO_FISICO" ColumnName="NOM_ANEXO_FISICO" />
+                <ScalarProperty Name="NOM_ANEXO_NINHADA" ColumnName="NOM_ANEXO_NINHADA" />
+                <ScalarProperty Name="ISN_NINHADA" ColumnName="ISN_NINHADA" />
+                <ScalarProperty Name="ISN_ANEXO_NINHADA" ColumnName="ISN_ANEXO_NINHADA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BAN_BANDEIRA">
+            <EntityTypeMapping TypeName="SYSCBKCModel.BAN_BANDEIRA">
+              <MappingFragment StoreEntitySet="BAN_BANDEIRA">
+                <ScalarProperty Name="DSC_BANDEIRA" ColumnName="DSC_BANDEIRA" />
+                <ScalarProperty Name="ISN_BANDEIRA" ColumnName="ISN_BANDEIRA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OPG_OPCAO_PAGAMENTO">
+            <EntityTypeMapping TypeName="SYSCBKCModel.OPG_OPCAO_PAGAMENTO">
+              <MappingFragment StoreEntitySet="OPG_OPCAO_PAGAMENTO">
+                <ScalarProperty Name="DSC_OPCAO_PAGAMENTO" ColumnName="DSC_OPCAO_PAGAMENTO" />
+                <ScalarProperty Name="ISN_OPCAO_PAGAMENTO" ColumnName="ISN_OPCAO_PAGAMENTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CAR_CARRINHO">
+            <EntityTypeMapping TypeName="SYSCBKCModel.CAR_CARRINHO">
+              <MappingFragment StoreEntitySet="CAR_CARRINHO">
+                <ScalarProperty Name="ISN_PESSOA" ColumnName="ISN_PESSOA" />
+                <ScalarProperty Name="ISN_SOLICITACAO" ColumnName="ISN_SOLICITACAO" />
+                <ScalarProperty Name="ISN_CARRINHO" ColumnName="ISN_CARRINHO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CID_CIDADE">
+            <EntityTypeMapping TypeName="SYSCBKCModel.CID_CIDADE">
+              <MappingFragment StoreEntitySet="CID_CIDADE">
+                <ScalarProperty Name="ISN_ESTADO" ColumnName="ISN_ESTADO" />
+                <ScalarProperty Name="DSC_CIDADE" ColumnName="DSC_CIDADE" />
+                <ScalarProperty Name="ISN_CIDADE" ColumnName="ISN_CIDADE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CUP_CUPOM">
+            <EntityTypeMapping TypeName="SYSCBKCModel.CUP_CUPOM">
+              <MappingFragment StoreEntitySet="CUP_CUPOM">
+                <ScalarProperty Name="STA_CUPOM" ColumnName="STA_CUPOM" />
+                <ScalarProperty Name="ISN_SOLICITACAO" ColumnName="ISN_SOLICITACAO" />
+                <ScalarProperty Name="DAT_UTILIZACAO" ColumnName="DAT_UTILIZACAO" />
+                <ScalarProperty Name="DAT_CADASTRO" ColumnName="DAT_CADASTRO" />
+                <ScalarProperty Name="NOM_PESSOA_CADASTRO_CUPOM" ColumnName="NOM_PESSOA_CADASTRO_CUPOM" />
+                <ScalarProperty Name="ISN_PESSOA_CADASTRO_CUPOM" ColumnName="ISN_PESSOA_CADASTRO_CUPOM" />
+                <ScalarProperty Name="NOM_PESSOA_REEMBOLSO" ColumnName="NOM_PESSOA_REEMBOLSO" />
+                <ScalarProperty Name="ISN_PESSOA_REEMBOLSO" ColumnName="ISN_PESSOA_REEMBOLSO" />
+                <ScalarProperty Name="VLR_CUPOM" ColumnName="VLR_CUPOM" />
+                <ScalarProperty Name="COD_CUPOM" ColumnName="COD_CUPOM" />
+                <ScalarProperty Name="ISN_CUPOM" ColumnName="ISN_CUPOM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITF_ITEM_FATURA">
+            <EntityTypeMapping TypeName="SYSCBKCModel.ITF_ITEM_FATURA">
+              <MappingFragment StoreEntitySet="ITF_ITEM_FATURA">
+                <ScalarProperty Name="VLR_SOLICITACAO" ColumnName="VLR_SOLICITACAO" />
+                <ScalarProperty Name="ISN_SOLICITACAO" ColumnName="ISN_SOLICITACAO" />
+                <ScalarProperty Name="ISN_FATURA" ColumnName="ISN_FATURA" />
+                <ScalarProperty Name="ISN_ITEM_FATURA" ColumnName="ISN_ITEM_FATURA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CAN_CANIL">
+            <EntityTypeMapping TypeName="SYSCBKCModel.CAN_CANIL">
+              <MappingFragment StoreEntitySet="CAN_CANIL">
+                <ScalarProperty Name="ANUIDADE" ColumnName="ANUIDADE" />
+                <ScalarProperty Name="COPROPRIETARIO" ColumnName="COPROPRIETARIO" />
+                <ScalarProperty Name="PROPRIETARIO" ColumnName="PROPRIETARIO" />
+                <ScalarProperty Name="ISN_CLUBE" ColumnName="ISN_CLUBE" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="CODIGO_FCI" ColumnName="CODIGO_FCI" />
+                <ScalarProperty Name="ISN_CANIL" ColumnName="ISN_CANIL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

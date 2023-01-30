@@ -1,0 +1,47 @@
+﻿<%@ Page Language="C#" MasterPageFile="~/Paginas/MasterPage.master" AutoEventWireup="true" CodeFile="ServicoIncluir.aspx.cs" Inherits="Paginas_ServicoIncluir" %>
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="Conteudo" runat="Server">
+      <div class="card">
+           <div class="container-fluid box">
+                       <div class="card-header">
+                <h5 class="card-title">Inclusão de Serviços</h5>
+              </div>
+         <div class="row">
+                            <div class="col-md">
+                                <asp:Label ID="lblMensagem" role="alert" Width="100%" runat="server" CssClass="alert alert-danger"></asp:Label>
+                            </div>
+                        </div>
+               <div class="card-body">
+                     <div class="row">
+                            <div class="form-group col-6">
+                                <label>Descrição do Serviço *</label>
+                                <asp:TextBox ID="txtServico" CssClass="form-control" MaxLength="200" runat="server"></asp:TextBox>
+                            </div>
+                        
+                             
+                          <div class="form-group col-3">
+                                <label><asp:Label ID="lblPrecoServico" runat="server" Text="Preço *"></asp:Label></label>
+                                <asp:DropDownList ID="drpPreco" runat="server" CssClass="form-control">
+                                </asp:DropDownList>
+                            </div>
+                          </div>
+                                          
+                                        
+                            </div>
+                       
+        <div>
+            <asp:Button CssClass="btn btn-success btn-round" ID="btnIncluir" runat="server" Text="Salvar" OnClick="btnSalvar_Click"></asp:Button>
+            <asp:Button CssClass="btn btn-danger btn-round" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click"></asp:Button>
+            
+        </div>
+                   </div>
+      
+
+            </div>
+          </div>
+   
+    </asp:Content>
+
+        
+       

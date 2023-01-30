@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f6a3ade3a4fa49dfa951fed04d355eec" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="SYSCBKCModel.ACE_ACESSO" Width="1.5" PointX="16.375" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSCBKCModel.CLB_CLUBE" Width="1.5" PointX="12.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSCBKCModel.CRC_COR_RACA" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSCBKCModel.DAR_DOMINIO_ATRIBUTO" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSCBKCModel.EST_ESTADO" Width="1.5" PointX="10" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSCBKCModel.FIL_FILHOTE" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSCBKCModel.NIN_NINHADA" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSCBKCModel.PES_PESSOA" Width="1.5" PointX="14.5" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSCBKCModel.PRS_PRECO_SERVICO" Width="1.5" PointX="9.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSCBKCModel.RAC_RACA" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSCBKCModel.REG_REGIAO" Width="1.5" PointX="7.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSCBKCModel.SER_SERVICO" Width="1.5" PointX="12" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSCBKCModel.SOL_SOLICITACAO" Width="1.5" PointX="14.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSCBKCModel.VAR_VARIEDADE_RACA" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <AssociationConnector Association="SYSCBKCModel.FK_CLB_CLUBE_EST_ESTADO" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSCBKCModel.FK_CLB_CLUBE_REG_REGIAO" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSCBKCModel.FK_PES_PESSOA_CLB_CLUBE" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSCBKCModel.FK_CRC_COR_RACA_RAC_RACA" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSCBKCModel.FK_EST_ESTADO_REG_REGIAO" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSCBKCModel.FK_PES_PESSOA_EST_ESTADO" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSCBKCModel.FK_FIL_FILHOTE_NIN_NINHADA" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSCBKCModel.FK_NIN_NINHADA_RAC_RACA" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSCBKCModel.FK_SER_SERVICO_PRS_PRECO_SERVICO" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSCBKCModel.FK_VAR_VARIEDADE_RACA_RAC_RACA" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSCBKCModel.FK_SOL_SOLICITACAO_SER_SERVICO" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSCBKCModel.FK_PES_PESSOA_ACE_ACESSO" />
+        <AssociationConnector Association="SYSCBKCModel.FK_SOL_SOLICITACAO_PES_PESSOA" />
+        <EntityTypeShape EntityType="SYSCBKCModel.PRD_PARAMETRO_DESCONTO" Width="1.5" PointX="0.75" PointY="1.375" />
+        <AssociationConnector Association="SYSCBKCModel.FK_RAC_RACA_PRD_PARAMETRO_DESCONTO" />
+        <AssociationConnector Association="SYSCBKCModel.FK_FIL_FILHOTE_VAR_VARIEDADE_RACA" />
+        <EntityTypeShape EntityType="SYSCBKCModel.FAT_FATURA" Width="1.5" PointX="16.75" PointY="9" />
+        <AssociationConnector Association="SYSCBKCModel.FK_FAT_FATURA_PES_PESSOA" />
+        <EntityTypeShape EntityType="SYSCBKCModel.TRA_TRANSFERENCIA" Width="1.5" PointX="5.375" PointY="7.75" />
+        <EntityTypeShape EntityType="SYSCBKCModel.ATR_ANEXO_TRANSFERENCIA" Width="1.5" PointX="7.625" PointY="8.375" />
+        <AssociationConnector Association="SYSCBKCModel.FK_ATR_ANEXO_TRA_TRANSFERENCIA" />
+        <EntityTypeShape EntityType="SYSCBKCModel.ANI_ANEXO_NINHADA" Width="1.5" PointX="5.25" PointY="12.25" />
+        <AssociationConnector Association="SYSCBKCModel.FK_ANI_ANEXO_NIN_NINHADA" />
+        <EntityTypeShape EntityType="SYSCBKCModel.BAN_BANDEIRA" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="SYSCBKCModel.OPG_OPCAO_PAGAMENTO" Width="1.5" PointX="2.75" PointY="10.75" />
+        <AssociationConnector Association="SYSCBKCModel.FK_FAT_FATURA_SOL_SOLICITACAO" />
+        <AssociationConnector Association="SYSCBKCModel.FK_SOL_NIN" />
+        <AssociationConnector Association="SYSCBKCModel.FK_SOL_TRA" />
+        <EntityTypeShape EntityType="SYSCBKCModel.CAR_CARRINHO" Width="1.5" PointX="16.75" PointY="3" />
+        <AssociationConnector Association="SYSCBKCModel.FK_CAR_CARRINHO_PES_PESSOA" />
+        <AssociationConnector Association="SYSCBKCModel.FK_CAR_CARRINHO_SOL_SOLICITACAO" />
+        <EntityTypeShape EntityType="SYSCBKCModel.CID_CIDADE" Width="1.5" PointX="12.25" PointY="11.125" />
+        <AssociationConnector Association="SYSCBKCModel.FK_CID_CIDADE_EST_ESTADO" />
+        <AssociationConnector Association="SYSCBKCModel.FK_CLB_CLUBE_CID_CIDADE" />
+        <AssociationConnector Association="SYSCBKCModel.FK_PES_PESSOA_CID_CIDADE" />
+        <AssociationConnector Association="SYSCBKCModel.FK_CRC_COR_RACA_VAR_VARIEDADE_RACA" />
+        <EntityTypeShape EntityType="SYSCBKCModel.CUP_CUPOM" Width="1.5" PointX="19.75" PointY="4.5" />
+        <AssociationConnector Association="SYSCBKCModel.FK_CUP_PES_1" />
+        <AssociationConnector Association="SYSCBKCModel.FK_CUP_PES_2" />
+        <AssociationConnector Association="SYSCBKCModel.FK_CUP_SOL" />
+        <AssociationConnector Association="SYSCBKCModel.FK_FAT_CUP" />
+        <EntityTypeShape EntityType="SYSCBKCModel.ITF_ITEM_FATURA" Width="1.5" PointX="22" PointY="5.625" />
+        <AssociationConnector Association="SYSCBKCModel.FK_ITF_FAT" />
+        <AssociationConnector Association="SYSCBKCModel.FK_ITF_SOL" />
+        <EntityTypeShape EntityType="SYSCBKCModel.CAN_CANIL" Width="1.5" PointX="7.375" PointY="12" />
+        <AssociationConnector Association="SYSCBKCModel.FK_PES_CAN" />
+        <AssociationConnector Association="SYSCBKCModel.FK_CAN_CLB" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

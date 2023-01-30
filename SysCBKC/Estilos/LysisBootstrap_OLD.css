@@ -1,0 +1,89 @@
+﻿
+div.PainelTituloInicio {
+    background-color: #FFEC8B !important;
+    color: black !important;
+}
+
+div.PainelCorpoInicio {
+    background-color: #FFFFE0;
+}
+
+.table-padrao tr td,
+.table-padrao tr th {
+    font-size: 10pt !important;
+    font-family: 'arial', sans-serif;
+    padding: .5rem;
+}
+
+.table-padrao th a {
+   color:white;
+}
+
+.table-padrao-details tr td,
+.table-padrao-details tr th {
+    font-size: 10pt !important;
+    font-family: 'arial', sans-serif;
+    padding: .3rem;
+}
+
+.rowstyle {
+    background-color: #f2f2f2;
+}
+
+table {
+    /*table-layout: fixed;*/
+    word-wrap: break-word;
+}
+
+.bg-primary, .btn-primary, .badge-primary {
+    background-color: #00619d !important;
+    color: White;
+}
+
+.table th {
+    text-align: center;
+}
+
+.table th,
+.table td {
+    font-size: 10px;
+    padding: 2px;
+    vertical-align: middle;
+    border-top: 1px solid #eceeef;
+}
+
+.Table-Calendar th,
+.Table-Calendar td {
+    font-size: 10px;
+    padding: 2px;
+    vertical-align: middle;
+    border-top: none !important;
+}
+
+.div LabelTitulo {
+    margin-top: 1% !important;
+    margin-bottom: 1% !important;
+    border-bottom: solid 1px gray !important;
+}
+
+.NomeSistemaMenuBootstrap {
+    font-family: 'arial', sans-serif;
+    color: black;
+    font-size: 16.0pt;
+    font-weight: bold;
+}
+
+.BodyLogin {
+    background-image: url('../Imagens/Login/lysis.jpg');
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+    background-size: cover;
+}
+
+.PanelLogin {
+    margin-top: 40%;
+    opacity: 0.8;
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+}
